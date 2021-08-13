@@ -1,0 +1,29 @@
+{
+  "name": "jackscript-js",
+  "version": "0.1.1",
+  "description": "Discrete math lib",
+   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+ "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielRomeo/jackscript-js.git"
+  },
+  "keywords": [
+    "discretemath",
+    "math",
+    "discrete"
+  ],
+  "author": "Daniel Romeo Mamphekgo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielRomeo/jackscript-js/issues"
+  },
+  "homepage": "https://github.com/DanielRomeo/jackscript-js#readme"
+}
