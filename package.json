@@ -8,6 +8,7 @@
     "dist"
   ],
  "scripts": {
+    "test": "cd ./dist && node ./index.js",
     "build": "tsc",
     "prepare": "npm run build"
   },
