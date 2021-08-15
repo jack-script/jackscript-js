@@ -8,31 +8,35 @@ install jackscript-js
 ```javascript
 import {Coordinate} from 'jackscriptjs';
 ```
+##### How this library works:
+This library is about sets. More property functions have been added on top of the Set prototype and more other standalone functions have been created as well.
+This library is meant to be used with numbers and coordinates. Meaning when a user of this library inserts elements inside the sets, it should be that they inserts numbers and not strings or other types.
+Coordinates are created as follows:
+```typescript 
+let myCoord = {
+	x: 1,
+	y:2
+}: Coordinate
+```   
+From the above example, a coordinate is being created(which is a normal object in javascript) but has the Coordinate type(if using typescript)
+
 
 ##### How to create a set:
-sets are created how you would normally create your set in javascript; as said earlier This library consnist of a set of functions and doesnt make any new data structures.
+Sets are created how you would normally create your set in javascript; as said earlier This library consists of a set of functions and doesn't make any new data structures.
 Therefore all set methods from the javascript standard library will work like usual
 ```javascript 
 mySet = set()
-
 ```
 
-##### How to create a coordinate(coord):
-coordinates are created as so
 
+##### Advanced...
 ```javascript
-mycoordinate = coord(1, 2) # this sets x to 1 and y to 2
+// add a coordinate to a set, using the coordinate created above:
+mySet.add(myCoord);
 
-```
-
-##### advanced...
-```javascript
-# add a coordinate to a set, using the coordinate created above:
-myset.add(mycoordinate);
-
-# as expected, the standard library methods will work as usual
+// As expected, the standard library methods will work as usual
 myset.clear()
-print(myset)  # returns set()
+print(myset)  // returns set(0)
 ```
 
 ##### checking whether a set is a subset of another...
@@ -42,8 +46,8 @@ set2 = {2, 5, 6, 9}
 ```
 Looking at the above code; its clear that set1 should be the subset of set2, we get our answer by calling the function `isSubset()`
 ```javascript
-answer = isSubset(set1, set2) # returns True 
-print(answer) # prints True
+answer = isSubset(set1, set2) // returns true 
+print(answer) // prints true
 ```
 
 <h5>Simmilarly we can test if a set is a superset of another</h5>
@@ -52,13 +56,13 @@ print(answer) # prints True
 set1 = {2, 5, 6}
 set2 = {2, 5, 6, 9}
 
-answer = isSuperset(set2, set1) # returns True 
-print(answer) # prints True
+answer = isSuperset(set2, set1) // returns true 
+print(answer) // prints true
 ```
 <h5>Create a cartesian product</h5>
 
 ```javascript
-#create a cartesian product by calling the createCartesian() function
+//create a cartesian product by calling the createCartesian() function
 ```
 
 <h5>Check if a product is a relation of another</h5>

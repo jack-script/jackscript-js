@@ -31,16 +31,32 @@ s2.forEach((e)=>{
 
 let set1 = new Set([100,200,500]);
 let set2 = new Set([1000,2000,3000, 'a']);
-let sett = new Set<any>()
-sett = createCartesianProduct(set1, set2)
-
-
-
-
-console.log(sett.size);
+// let sett = new Set<any>()
+// sett = createCartesianProduct(set1, set2)
+// console.log(sett.size);
 
 // sett.forEach((e)=>{
 // 	console.log(e)
 // })
+declare global{
+	interface Array<T>{
+		remove(o: T): Array<T>;
+		myUcase(): void;
+	}
+}
+Array.prototype.remove = function (o) {
+    // code to remove "o"
+    return this;
+}
+
+Array.prototype.myUcase = function() {
+  for (let i = 0; i < this.length; i++) {
+    this[i] = this[i].toUpperCase();
+  }
+}; 
+console.log(set1);
+// let arr = ["ads", "dsfd"];
+// let a = arr.case();
+// console.log(a );
 
 
