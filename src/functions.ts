@@ -9,28 +9,33 @@ class Methods{
 			if(setA.size < 1|| setB.size < 1){
 				throw "Parementer sets must both not be empty";
 			}
+			setA.forEach((e)=>	{
+				if(typeof e !== 'number'){
+					throw "Jackscript is a numbers type library, please use numbers only."
+				}
+			});
+			setB.forEach((e)=>	{
+				if(typeof e !== 'number'){
+					throw "Jackscript is a numbers type library, please use numbers only."
+				}
+			});
 
+			// start if there are no more errors to be caught:
 			let tempCoordinate:Coordinate = {x:0, y:0};
 			let tempSet = new Set();
 			
-			setA.forEach((e)=>{
-				let a = {a: 100, b:100}
-				tempSet.add(a);
-			})
-
-			for(let i = 0; i < setA.size; i++){
-				for(let j = 0; j < setA.size; j++){
+			setA.forEach(i => {
+				setB.forEach(j => {
 					tempCoordinate = {
-						x:setA[i], 
-						y:setB[j]
+						x:i, 
+						y:j
 					}
-					// tempSet.add(tempCoordinate);
-				}
-			}
+					tempSet.add(tempCoordinate);	
+				})
+			})
 			return tempSet;
-
 		}catch(err){
-			console.log(err);
+			console.log("Type error: "+err);
 		}
 	}
 
