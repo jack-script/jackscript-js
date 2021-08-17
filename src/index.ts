@@ -2,7 +2,7 @@ export * from './coordinate.js'
 export * from './functions.js';
 
 import {Coordinate} from './coordinate.js';
-import {createCartesianProduct} from './functions.js';
+import {Methods} from './functions.js';
 
 
 let s1 = new Set();
@@ -31,32 +31,16 @@ s2.forEach((e)=>{
 
 let set1 = new Set([100,200,500]);
 let set2 = new Set([1000,2000,3000, 'a']);
-// let sett = new Set<any>()
-// sett = createCartesianProduct(set1, set2)
-// console.log(sett.size);
 
-// sett.forEach((e)=>{
-// 	console.log(e)
-// })
-declare global{
-	interface Array<T>{
-		remove(o: T): Array<T>;
-		myUcase(): void;
-	}
-}
-Array.prototype.remove = function (o) {
-    // code to remove "o"
-    return this;
-}
+// declare global{
+// 	interface Array<T>{
+// 		remove(o: T): Array<T>;
+// 		myUcase(): void;
+// 	}
 
-Array.prototype.myUcase = function() {
-  for (let i = 0; i < this.length; i++) {
-    this[i] = this[i].toUpperCase();
-  }
-}; 
 console.log(set1);
-// let arr = ["ads", "dsfd"];
-// let a = arr.case();
-// console.log(a );
+
+let aa = Methods.range();
+console.log(aa);
 
 
