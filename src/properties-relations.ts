@@ -39,7 +39,8 @@ export {
 	isIrreflexive,
 	isSymmetric,
 	isAntiSymmetric,
-	isTransitive
+	isTransitive,
+	isInverseRelation
 }
 
 // let myset = new Set(111,222);

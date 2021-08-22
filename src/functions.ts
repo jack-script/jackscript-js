@@ -1,5 +1,21 @@
 import {Coordinate} from './coordinate.js';
 
+// function that checks is a set is a valid set or not:
+const isValidSet = (theset:any): boolean =>{
+	try{
+		if(theset instanceof Set === false){
+			throw "Parementers must both be of instance: Set";
+		}
+		if(theset.size < 1){
+			throw "Parementer sets must both not be empty";
+		}
+	}catch(err){
+		console.log("Type/size error: "+err);
+		return false;
+	}
+	return true;
+}
+
 class Methods{
 	static createCartesianProduct = (setA:any, setB:any) =>{
 		try{
@@ -39,14 +55,24 @@ class Methods{
 		}
 	}
 
-	static domain = () => {
+	/*Domain and range test makes use of coordinates(set of coordinates) */
+	// takes a set of coordinates, and returns a set of all the x values
+	static domain = (theset:any) => {
+		// confirm its a set of coords:
 		let resultSet = new Set();
+		theset.forEach((e:Coordinate) => {
+			resultSet.add(e.x);
+		});
 		return resultSet;
 	}
 
-	static range = () => {
+	static range = (theset:any) => {
+		// confirm its a set of coords:
 		let resultSet = new Set();
-		return 100;
+		theset.forEach((e:Coordinate) => {
+			resultSet.add(e.y);
+		});
+		return resultSet;
 	}
 
 	static isSubset = (mainSet: any, theSubset:any ) =>{
@@ -54,15 +80,12 @@ class Methods{
 		let tempSubsetArray: number|Coordinate[] = Array.from(theSubset);
 		let tempMainSetArray: any = Array.from(mainSet);
 
-	
 		for (let i = 0; i < tempSubsetArray.length; i++) {
-			
 			if(tempMainSetArray.includes(tempSubsetArray[i]) === false){
 				console.log();
 				return false;
 			}
 		}
-
 		return true;
 	}	
 }

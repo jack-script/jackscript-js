@@ -36,3 +36,11 @@ let set4 = new Set([100, 200])
 let ss = Methods.createCartesianProduct(set1, set2);
 // console.log(Methods.isSubset(set1, set4)) 
 
+let setofcoords = new Set();
+setofcoords.add({x:1,y:3});
+setofcoords.add({x:90,y:33});
+setofcoords.add({x:88,y:200});
+
+console.log(setofcoords);
+let aaa = Methods.domain(setofcoords);
+console.log(aaa);
