@@ -8,8 +8,28 @@ declare global{
 	}
 }
 
-const isReflexive = () : boolean => {
-	// i need to code the isSubset function and use it here first:
+const isReflexive = (mainSet:any, relationSet:any) : boolean => {
+	// create ordered pairs and check if they exist in the relationSet:
+	let tempMainSet :any = Array.from(mainSet);
+	let tempArray:any = [];
+	let count = 0;
+	mainSet.forEach((e: number) => {
+		let tempCoord :Coordinate ={
+			x: e,
+			y: e
+		}
+		tempArray[count] = tempCoord;
+		count++;
+	});
+
+	//convert relation set to an array and iterate over it:
+	let tempRelationSet : any = Array.from(relationSet);
+	for (let i = 0; i < tempRelationSet.length; i++) {
+		console.log(tempRelationSet[i]);
+		if(!tempArray.includes(tempRelationSet[i]) ){
+			return false;
+		}
+	}
 	return true;
 }
 
