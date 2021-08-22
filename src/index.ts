@@ -31,20 +31,8 @@ s2.forEach((e)=>{
 
 let set1 = new Set([100,200,500]);
 let set2 = new Set([1000,2000,3000]);
+let set4 = new Set([100, 200])
 
-
-// console.log(set1[0])
-// declare global{
-// 	interface Array<T>{
-// 		remove(o: T): Array<T>;
-// 		myUcase(): void;
-// 	}
-
-// console.log(set1);
-
-let aa = Methods.range();
-// console.log(aa);
-
-// let f = new Set();
 let ss = Methods.createCartesianProduct(set1, set2);
-console.log(ss);
+// console.log(Methods.isSubset(set1, set4)) 
+

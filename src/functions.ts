@@ -9,12 +9,12 @@ class Methods{
 			if(setA.size < 1|| setB.size < 1){
 				throw "Parementer sets must both not be empty";
 			}
-			setA.forEach((e)=>	{
+			setA.forEach((e: number)=>	{
 				if(typeof e !== 'number'){
 					throw "Jackscript is a numbers type library, please use numbers only."
 				}
 			});
-			setB.forEach((e)=>	{
+			setB.forEach((e: number)=>	{
 				if(typeof e !== 'number'){
 					throw "Jackscript is a numbers type library, please use numbers only."
 				}
@@ -49,8 +49,21 @@ class Methods{
 		return 100;
 	}
 
-	static isSubset = (theSet, theSubset) =>{
-		return 100;
+	static isSubset = (mainSet: any, theSubset:any ) =>{
+		
+		let tempSubsetArray: number|Coordinate[] = Array.from(theSubset);
+		let tempMainSetArray: any = Array.from(mainSet);
+
+	
+		for (let i = 0; i < tempSubsetArray.length; i++) {
+			
+			if(tempMainSetArray.includes(tempSubsetArray[i]) === false){
+				console.log();
+				return false;
+			}
+		}
+
+		return true;
 	}	
 }
 

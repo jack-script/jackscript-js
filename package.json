@@ -2,12 +2,12 @@
   "name": "jackscript-js",
   "version": "0.1.1",
   "description": "Discrete math lib",
-   "main": "dist/index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
- "scripts": {
+  "scripts": {
     "test": "cd ./dist && node ./index.js",
     "build": "tsc",
     "prepare": "npm run build"
