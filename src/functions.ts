@@ -76,10 +76,8 @@ class Methods{
 	}
 
 	static isSubset = (mainSet: any, theSubset:any ) =>{
-		
 		let tempSubsetArray: number|Coordinate[] = Array.from(theSubset);
 		let tempMainSetArray: any = Array.from(mainSet);
-
 		for (let i = 0; i < tempSubsetArray.length; i++) {
 			if(tempMainSetArray.includes(tempSubsetArray[i]) === false){
 				console.log();

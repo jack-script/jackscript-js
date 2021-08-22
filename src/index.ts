@@ -42,5 +42,5 @@ setofcoords.add({x:90,y:33});
 setofcoords.add({x:88,y:200});
 
 console.log(setofcoords);
-let aaa = Methods.domain(setofcoords);
+let aaa = Methods.range(setofcoords);
 console.log(aaa);
