@@ -33,11 +33,31 @@ const isReflexive = (mainSet:any, relationSet:any) : boolean => {
 	return true;
 }
 
-const isIrreflexive = () : boolean => {
+const isSymmetric = (mainSet:any, relationSet:any) : boolean => {
+	console.log(relationSet);
+
+	// let mainSetArray :any = Array.from(mainSet);
+	let relationSetArray: any = Array.from(relationSet);
+	for(let i = 0 ; i < relationSetArray.length; i++){
+		if(relationSetArray[i].hasOwnProperty('x')  ){
+			
+			// create coordinate
+			let tempCoordinate : any = {
+				x: relationSetArray[i].y, 
+				y: relationSetArray[i].x
+			}
+			console.log(tempCoordinate ===relationSetArray[0]);
+
+			if(relationSetArray.includes(tempCoordinate) === false ){
+				return false;
+			}
+		}
+	}
+	
 	return true;
 }
 
-const isSymmetric = () : boolean => {
+const isIrreflexive = () : boolean => {
 	return true;
 }
 
