@@ -80,12 +80,22 @@ class Methods{
 		let tempMainSetArray: any = Array.from(mainSet);
 		for (let i = 0; i < tempSubsetArray.length; i++) {
 			if(tempMainSetArray.includes(tempSubsetArray[i]) === false){
-				console.log();
 				return false;
 			}
 		}
 		return true;
 	}	
+
+	static isSuperset = (theSuperSet: any, theNormalSet:any) =>{
+		let theNormalArray: number|Coordinate[] = Array.from(theNormalSet);
+		let theSuperArray: any = Array.from(theSuperSet);
+		for (let i = 0; i < theNormalArray.length; i++) {
+			if(theSuperArray.includes(theNormalArray[i]) === false){
+				return false;
+			}
+		}
+		return true;
+	}
 }
 
 

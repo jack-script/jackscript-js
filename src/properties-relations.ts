@@ -42,11 +42,11 @@ const isSymmetric = (mainSet:any, relationSet:any) : boolean => {
 		if(relationSetArray[i].hasOwnProperty('x')  ){
 			
 			// create coordinate
-			let tempCoordinate : any = {
+			let tempCoordinate : Coordinate = {
 				x: relationSetArray[i].y, 
 				y: relationSetArray[i].x
 			}
-			console.log(tempCoordinate ===relationSetArray[0]);
+			console.log(tempCoordinate +' '+relationSetArray[i]);
 
 			if(relationSetArray.includes(tempCoordinate) === false ){
 				return false;

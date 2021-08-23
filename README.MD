@@ -64,32 +64,3 @@ print(answer) // prints true
 ```javascript
 //create a cartesian product by calling the createCartesian() function
 ```
-
-<h5>Check if a product is a relation of another</h5>
-<p>the function is called: <b>isRelation()</b> </p>
-
-```javascript 
-```
-
-<p>as u can see above; we used <code>normalset1</code> and <code>normalset3</code> to create a <code>cartesian2</code></p>
-
-<p>so technically, <code>cartesianProduct2</code> should be a relation of <code>cartesian1</code>. We test this theory in the function below, in continuation of the above code.</p>
-
-```javascript
-print(isRelation(cartesian2, cartesian1)); # returns true
-```
-
-
-
-<!-- write domain and range documentation here -->
-
-
-
-<!-- a Binary Relation is a set that is the subset of any Cartesian product 
-	if isSubset(R, createCartesian(A, B)) returns true... then R is a BinaryRelation of S
--->
-
-
-
-
-
