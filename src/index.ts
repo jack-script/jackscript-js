@@ -31,9 +31,10 @@ let aaa = Methods.range(set1);
 let tempset = new Set()
 let xx :Coordinate= {x: 100, y: 100};
 tempset.add(xx);
+tempset.add({x: 200, y: 900});
+tempset.add({x: 900, y: 200});
 tempset.add({x: 200, y: 200});
 tempset.add({x: 500, y: 500});
 // console.log(isReflexive(set1, tempset));
 
-// console.log(isSymmetric(set1, tempset))
-console.log(Methods.isSuperset(set1, set4));
+console.log(isSymmetric( tempset))
