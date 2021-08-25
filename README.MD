@@ -54,9 +54,9 @@ Methods.getRelations()
 Methods.isRelation()
 ```
 
-#### Basics
+### Basics
 ```javascript
-// add a coordinate to a set, using the coordinate created above:
+// Add a coordinate to a set, using the coordinate created above:
 mySet.add(myCoord);
 
 // As expected, the standard library methods will work as usual
@@ -71,7 +71,7 @@ let set2 = {2, 5, 6, 9}
 ```
 Looking at the above code; its clear that set1 should be the subset of set2, we get our answer by calling the function `isSubset()`
 ```javascript
-answer = isSubset(set1, set2) // returns true 
+answer = Methods.isSubset(set1, set2) // returns true 
 print(answer) // prints true
 ```
 
@@ -81,11 +81,28 @@ print(answer) // prints true
 set1 = {2, 5, 6}
 set2 = {2, 5, 6, 9}
 
-answer = isSuperset(set2, set1) // returns true 
+answer = Methods.isSuperset(set2, set1) // returns true 
 print(answer) // prints true
 ```
-<h5>Create a cartesian product</h5>
 
-```javascript
-//create a cartesian product by calling the createCartesian() function
+### Advanced
+Domain makes use of coordinates(set of coordinates) ,takes a set of coordinates, and returns a set of all the x values
+
+```typescript
+let testSet = new Set();
+let a :Coordinate ={
+	x: 100,
+	y: 200
+}
+let b :Coordinate ={
+	x: 400,
+	y: 600
+}
+
+testSet.add(a);
+testSet.add(b);
+
+console.log(domain); // returns set([100, 400])
+console.log(range); // returns set([200, 600])
 ```
+
