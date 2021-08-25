@@ -16,6 +16,9 @@ const isValidSet = (theset:any): boolean =>{
 	return true;
 }
 
+
+
+
 class Methods{
 	static createCartesianProduct = (setA:any, setB:any) =>{
 		try{
@@ -95,6 +98,21 @@ class Methods{
 			}
 		}
 		return true;
+	}
+
+	// get relation from setA to setB
+	static getRelations = (setA:any, setB:any) =>{
+		let resultSet:any = new Set();
+		setA.forEach((e:number) => {
+			setB.forEach((f: number) => {
+				let tempCoord: Coordinate ={
+					x: e,
+					y: f
+				}
+				resultSet.add(tempCoord);
+			});
+		});
+		return resultSet;
 	}
 }
 

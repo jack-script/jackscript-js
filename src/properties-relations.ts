@@ -46,7 +46,27 @@ const isSymmetric = (relationSet:any) : boolean => {
 	return true;
 }
 
-const isIrreflexive = () : boolean => {
+const isIrreflexive = (mainSet:any, relationSet:any) : boolean => {
+	// function that checks if relationset os a relation on mainSet
+	let relationSetArray: any = Array.from(relationSet);
+	let tempArray :any = [];
+	mainSet.forEach((e: number) => {
+		let tempCoord :Coordinate ={
+			x: e,
+			y: e
+		}
+		tempArray.push(tempCoord);
+	});
+
+	
+	if (relationSetArray.filter(e => e.x === relationSetArray[i].y && e.y === relationSetArray[i].x).length > 0) {
+		// do nothing
+	}else{
+		return false;
+	}
+
+	
+
 	return true;
 }
 
