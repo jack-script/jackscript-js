@@ -1,5 +1,26 @@
 # Changelog
 
+## v1.0.0-Alpha - Aug 25, 2021
+
+**Added:**
+The following methods
+- Methods.createCartesianProduct()
+- Methods.domain()
+- Methods.range()
+- Methods.isSubset()
+- Methods.isSuperset()
+- Methods.getRelations()
+- Methods.isRelation()
+
+The following functions
+- isAntiSymmetric, 
+- isIrreflexive, 
+- isReflexive, 
+- isSymmetric, 
+- isTransitive
+
+---
+
 ## v0.2.0 - Aug 25, 2021
 
 **Added:**
@@ -11,7 +32,7 @@
 
 ---
 
-## v0.1.2 - Aug 25, 2021
+## v0.1.2 - Aug 1, 2021
 
 **Added:**
 - isSymmetric function
