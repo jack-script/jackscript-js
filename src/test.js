@@ -39,3 +39,23 @@
 // tempset.add({x: 200, y: 200});
 // tempset.add({x: 500, y: 500});
 // console.log(isReflexive(set1, tempset));
+
+
+
+// transative tests::
+// let tempset = new Set()
+// // let xx :Coordinate= {x: 100, y: 100};
+// // tempset.add(xx);
+// // tempset.add({x: 1, y: 1});
+// // tempset.add({x: 2, y: 2});
+// // tempset.add({x: 2, y: 1});
+// // tempset.add({x: 1, y: 2});
+
+// tempset.add({x: 1, y: 8});
+// tempset.add({x: 2, y: 2});
+
+// tempset.add({x: 8, y: 2});
+
+// tempset.add({x: 1, y: 2});
+// tempset.add({x: 8, y: 11});
+
