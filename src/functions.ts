@@ -114,6 +114,18 @@ class Methods{
 		});
 		return resultSet;
 	}
+
+	// make sure that, for A*A sets, second param is a relation on the first param
+	static isRelation = (setA:any, setB:any): boolean =>{
+		let cartesianSet = this.getRelations(setA, setA);
+		let setBArray = Array.from(setB);
+		for (let i = 0; i < setBArray.length; i++) {
+			if(!cartesianSet.has(setBArray[i])){
+				return false;
+			}
+		}
+		return true;
+	}
 }
 
 

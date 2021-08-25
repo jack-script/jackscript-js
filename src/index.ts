@@ -36,17 +36,15 @@ let tempset = new Set()
 // tempset.add({x: 2, y: 1});
 // tempset.add({x: 1, y: 2});
 
-tempset.add({x: 1, y: 8});
-tempset.add({x: 2, y: 2});
-
-tempset.add({x: 8, y: 2});
-
-tempset.add({x: 1, y: 2});
-tempset.add({x: 8, y: 11});
+tempset.add({x: 2, y: 3});
+tempset.add({x: 2, y: 5});
+tempset.add({x: 9, y: 9});
+// tempset.add({x: 1, y: 2});
+// tempset.add({x: 8, y: 11});
 
 
 
 
 // console.log(isReflexive(set1, tempset));
-let s = new Set([1,2,3])
+let s = new Set([2,3,5])
 console.log(isIrreflexive(s, tempset))
