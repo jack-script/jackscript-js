@@ -43,7 +43,6 @@ const isSymmetric = (relationSet:any) : boolean => {
 		}
 
 	}
-
 	return true;
 }
 
@@ -51,7 +50,24 @@ const isIrreflexive = () : boolean => {
 	return true;
 }
 
-const isAntiSymmetric = () : boolean => {
+// Basically mirror coordinates shouldnt live in the set
+const isAntiSymmetric = (relationSet) : boolean => {
+	// this set can only accept a set that only has coordinates... write a function to ensure this
+	
+	let relationSetArray: any = Array.from(relationSet);
+	for(let i = 0 ; i < relationSetArray.length; i++){
+		if(relationSetArray[i].x === relationSetArray[i].y){
+			// skip these because (100, 100) doesnt rule the set non AntiSymmetric
+			continue;
+		}
+		if (relationSetArray.filter(e => e.x === relationSetArray[i].y && e.y === relationSetArray[i].x).length > 0) {
+			return false;
+		}else{
+			// do nothing
+		}
+
+	}
+	
 	return true;
 }
 
