@@ -1,4 +1,5 @@
 import {Coordinate} from './coordinate.js';
+import {Methods} from './functions';
 
 declare global{
 	interface Set<T>{
@@ -47,7 +48,9 @@ const isSymmetric = (relationSet:any) : boolean => {
 }
 
 const isIrreflexive = (mainSet:any, relationSet:any) : boolean => {
-	// function that checks if relationset os a relation on mainSet
+	// create this relations set to verfify using it that the coords checked are existant in here
+	let relations = Methods.getRelations(mainSet, mainSet);
+	let relationsArray:any = Array.from(relations); console.log(relationsArray);
 	let relationSetArray: any = Array.from(relationSet);
 	let tempArray :any = [];
 	mainSet.forEach((e: number) => {
@@ -58,11 +61,18 @@ const isIrreflexive = (mainSet:any, relationSet:any) : boolean => {
 		tempArray.push(tempCoord);
 	});
 
-	
-	if (relationSetArray.filter(e => e.x === relationSetArray[i].y && e.y === relationSetArray[i].x).length > 0) {
-		// do nothing
+	if (relationSetArray.filter(e => e.x === e.y).length > 0) {
+		let relationSetArrayFiltered = relationSetArray.filter(e => e.x === e.y);
+		// and in addition; it is a relation to mainSet , then irreflexive is false:
+		for(let i = 0; i < relationSetArrayFiltered.length; i++){
+			if(relationsArray.includes(relationSetArrayFiltered[i])){
+				continue;
+			}else{
+				return false;
+			}
+		}
 	}else{
-		return false;
+		// means we found no coords with same x and y values ... which is good
 	}
 
 	

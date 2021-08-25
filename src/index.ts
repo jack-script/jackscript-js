@@ -3,7 +3,7 @@ export * from './functions.js';
 
 import {Coordinate} from './coordinate.js';
 import {Methods} from './functions.js';
-import { isAntiSymmetric, isReflexive, isSymmetric, isTransitive } from './properties-relations.js';
+import { isAntiSymmetric, isIrreflexive, isReflexive, isSymmetric, isTransitive } from './properties-relations.js';
 
 
 let s1 = new Set();
@@ -47,5 +47,5 @@ tempset.add({x: 8, y: 11});
 
 
 // console.log(isReflexive(set1, tempset));
-
-console.log(isTransitive( tempset))
+let s = new Set([1,2,3])
+console.log(isIrreflexive(s, tempset))
