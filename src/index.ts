@@ -14,7 +14,7 @@ let coord1: Coordinate ={
 
 let set1 = new Set([100,200,500]);
 let set2 = new Set([1000,2000,3000]);
-let set4 = new Set([100, 200])
+let set4 = new Set([100, 200,5])
 
 let ss = Methods.createCartesianProduct(set1, set2);
 // console.log(Methods.isSubset(set1, set4)) 
@@ -35,4 +35,5 @@ tempset.add({x: 200, y: 200});
 tempset.add({x: 500, y: 500});
 // console.log(isReflexive(set1, tempset));
 
-console.log(isSymmetric(set1, tempset))
+// console.log(isSymmetric(set1, tempset))
+console.log(Methods.isSuperset(set1, set4));
