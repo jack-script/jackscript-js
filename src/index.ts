@@ -3,7 +3,7 @@ export * from './functions.js';
 
 import {Coordinate} from './coordinate.js';
 import {Methods} from './functions.js';
-import { isAntiSymmetric, isReflexive, isSymmetric } from './properties-relations.js';
+import { isAntiSymmetric, isReflexive, isSymmetric, isTransitive } from './properties-relations.js';
 
 
 let s1 = new Set();
@@ -29,12 +29,14 @@ let aaa = Methods.range(set1);
 // console.log(aaa);
 
 let tempset = new Set()
-let xx :Coordinate= {x: 100, y: 100};
+// let xx :Coordinate= {x: 100, y: 100};
 // tempset.add(xx);
-tempset.add({x: 200, y: 900});
-tempset.add({x: 900, y: 200});
-// tempset.add({x: 200, y: 200});
-tempset.add({x: 500, y: 500});
+tempset.add({x: 1, y: 1});
+tempset.add({x: 2, y: 2});
+tempset.add({x: 2, y: 1});
+tempset.add({x: 1, y: 2});
+// tempset.add({x: 1, y: 2});
+
 // console.log(isReflexive(set1, tempset));
 
-console.log(isAntiSymmetric( tempset))
+console.log(isTransitive( tempset))

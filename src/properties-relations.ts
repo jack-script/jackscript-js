@@ -53,7 +53,7 @@ const isIrreflexive = () : boolean => {
 // Basically mirror coordinates shouldnt live in the set
 const isAntiSymmetric = (relationSet) : boolean => {
 	// this set can only accept a set that only has coordinates... write a function to ensure this
-	
+
 	let relationSetArray: any = Array.from(relationSet);
 	for(let i = 0 ; i < relationSetArray.length; i++){
 		if(relationSetArray[i].x === relationSetArray[i].y){
@@ -67,11 +67,37 @@ const isAntiSymmetric = (relationSet) : boolean => {
 		}
 
 	}
-	
 	return true;
 }
 
-const isTransitive = () : boolean => {
+const isTransitive = (relationSet:any) : boolean => {
+	// this set can only accept a set that only has coordinates... write a function to ensure this
+
+	let relationSetArray: any = Array.from(relationSet);
+	for(let i = 0 ; i < relationSetArray.length; i++){
+		console.log(relationSetArray[i]);
+		for(let j = 0; j < relationSetArray.length; j++){
+			//console.log(relationSetArray[i], relationSetArray[j]);
+			// makes use of the first objects y coord and the second objects x coordinate
+			// if y and x are the same... then ...else disregard:
+			if(relationSetArray[i].y === relationSetArray[j].x){
+				// create a coordinate here and check to see if it exists in the set
+				let tempCoord : Coordinate ={
+					x: relationSetArray[i].x,
+					y: relationSetArray[j].y
+				}
+
+				if (relationSetArray.filter(e => e.x === tempCoord.x && e.y === tempCoord.y).length > 0) {
+					// found one... good
+				}else{
+					// no such coordinate found in the set...
+					return false;
+				}
+			}
+		}
+		
+
+	}
 	return true;
 }
 
