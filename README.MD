@@ -61,7 +61,7 @@ mySet.add(myCoord);
 
 // As expected, the standard library methods will work as usual
 myset.clear()
-print(myset)  // returns set(0)
+console.log(myset)  // returns set(0)
 ```
 
 #### Checking whether a set is a subset of another...
@@ -72,7 +72,7 @@ let set2 = {2, 5, 6, 9}
 Looking at the above code; its clear that set1 should be the subset of set2, we get our answer by calling the function `isSubset()`
 ```javascript
 answer = Methods.isSubset(set1, set2) // returns true 
-print(answer) // prints true
+console.log(answer) // prints true
 ```
 
 <h5>Simmilarly we can test if a set is a superset of another</h5>
