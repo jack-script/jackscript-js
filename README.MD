@@ -82,7 +82,7 @@ set1 = {2, 5, 6}
 set2 = {2, 5, 6, 9}
 
 answer = Methods.isSuperset(set2, set1) // returns true 
-print(answer) // prints true
+console.log(answer) // prints true
 ```
 
 ### Advanced
