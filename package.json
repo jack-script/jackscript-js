@@ -1,6 +1,6 @@
 {
   "name": "jackscript-js",
-  "version": "1.0.0-Alpha",
+  "version": "1.0.1-Alpha",
   "description": "Discrete math lib",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
