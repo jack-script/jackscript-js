@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.1-Alpha - Oct 4, 2021
+
+**Added:**
+Fixed documentation errors
+
+---
+
 ## v1.0.0-Alpha - Aug 25, 2021
 
 **Added:**
