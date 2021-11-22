@@ -1,5 +1,5 @@
 ### About jackscriptjs
-Jackscriptpy is a javascript math library of sets. It covers a few useful functions involving sets that are otherwise not available in the standard Javascript library.
+Jackscript-js is a javascript math library of sets. It covers a few useful functions involving sets that are otherwise not available in the standard Javascript library.
 
 **Version 1.0.0-Apha**  - [Change log](CHANGELOG.md)
 
