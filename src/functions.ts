@@ -6,26 +6,27 @@ interface JackscriptSet<T extends Set<any>>{};
 
 // refactoring: I dont think i need to check if there is a valid set or not if i force user to 
 // have a Set as a param
-const isValidSet = (theset:any): boolean =>{
-	try{
-		if(theset instanceof Set === false){
-			throw "Parementers must both be of instance: Set";
-		}
-		if(theset.size < 1){
-			throw "Parementer sets must both not be empty";
-		}
-	}catch(err){
-		console.log("Type/size error: "+err);
-		return false;
+
+
+const isValidSet = <T>(theset:Set<T>): boolean =>{
+	if(theset instanceof Set === false){
+		throw "Parementers must both be of instance: Set";
 	}
 	return true;
 }
 
-const isValidSet2 = (theset: Set<any>) =>{
-	return true;
+class MySet<T> extends Set<T> {
+	constructor(values?: readonly T[] | null){
+		super(values);
+	}
+
+	createCartesian(...elems: T[]): this {
+		return this;
+	}
+
+	
 }
-
-
+  
 
 
 // class Methods{
@@ -88,26 +89,26 @@ const isValidSet2 = (theset: Set<any>) =>{
 // 	}
 
 	// The following functions, i need to remove or change somehow
-	static isSubset = (mainSet: any, theSubset:any ) =>{
-		let tempSubsetArray: number|Coordinate[] = Array.from(theSubset);
-		let tempMainSetArray: any = Array.from(mainSet);
-		for (let i = 0; i < tempSubsetArray.length; i++) {
-			if(tempMainSetArray.includes(tempSubsetArray[i]) === false){
-				return false;
-			}
-		}
-		return true;
-	}	
-	static isSuperset = (theSuperSet: any, theNormalSet:any) =>{
-		let theNormalArray: number|Coordinate[] = Array.from(theNormalSet);
-		let theSuperArray: any = Array.from(theSuperSet);
-		for (let i = 0; i < theNormalArray.length; i++) {
-			if(theSuperArray.includes(theNormalArray[i]) === false){
-				return false;
-			}
-		}
-		return true;
-	}
+	// static isSubset = (mainSet: any, theSubset:any ) =>{
+	// 	let tempSubsetArray: number|Coordinate[] = Array.from(theSubset);
+	// 	let tempMainSetArray: any = Array.from(mainSet);
+	// 	for (let i = 0; i < tempSubsetArray.length; i++) {
+	// 		if(tempMainSetArray.includes(tempSubsetArray[i]) === false){
+	// 			return false;
+	// 		}
+	// 	}
+	// 	return true;
+	// }	
+	// static isSuperset = (theSuperSet: any, theNormalSet:any) =>{
+	// 	let theNormalArray: number|Coordinate[] = Array.from(theNormalSet);
+	// 	let theSuperArray: any = Array.from(theSuperSet);
+	// 	for (let i = 0; i < theNormalArray.length; i++) {
+	// 		if(theSuperArray.includes(theNormalArray[i]) === false){
+	// 			return false;
+	// 		}
+	// 	}
+	// 	return true;
+	// }
 
 // 	// get relation from setA to setB
 // 	static getRelations = (setA:any, setB:any) =>{
@@ -138,4 +139,4 @@ const isValidSet2 = (theset: Set<any>) =>{
 // }
 
 
-export { isValidSet, isValidSet2}
+export { isValidSet, MySet}

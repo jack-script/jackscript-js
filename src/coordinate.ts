@@ -1,4 +1,4 @@
-type Coordinate<T> ={
+interface Coordinate<T> {
   x: T,
   y: T
 }
