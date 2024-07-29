@@ -78,6 +78,7 @@ class Methods{
 		return resultSet;
 	}
 
+	// The following functions, i need to remove or change somehow
 	static isSubset = (mainSet: any, theSubset:any ) =>{
 		let tempSubsetArray: number|Coordinate[] = Array.from(theSubset);
 		let tempMainSetArray: any = Array.from(mainSet);
@@ -88,7 +89,6 @@ class Methods{
 		}
 		return true;
 	}	
-
 	static isSuperset = (theSuperSet: any, theNormalSet:any) =>{
 		let theNormalArray: number|Coordinate[] = Array.from(theNormalSet);
 		let theSuperArray: any = Array.from(theSuperSet);
