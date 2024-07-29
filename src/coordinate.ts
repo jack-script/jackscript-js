@@ -1,6 +1,6 @@
-type Coordinate ={
-  x: number,
-  y: number
+type Coordinate<T> ={
+  x: T,
+  y: T
 }
 export {Coordinate};
 

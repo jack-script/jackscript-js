@@ -1,6 +1,11 @@
 import {Coordinate} from './coordinate.js';
 
+interface JackscriptSet<T extends Set<any>>{};
+
 // function that checks is a set is a valid set or not:
+
+// refactoring: I dont think i need to check if there is a valid set or not if i force user to 
+// have a Set as a param
 const isValidSet = (theset:any): boolean =>{
 	try{
 		if(theset instanceof Set === false){
@@ -16,67 +21,71 @@ const isValidSet = (theset:any): boolean =>{
 	return true;
 }
 
+const isValidSet2 = (theset: Set<any>) =>{
+	return true;
+}
 
 
 
-class Methods{
-	static createCartesianProduct = (setA:any, setB:any) =>{
-		try{
-			if(setA instanceof Set === false || setB instanceof Set === false){
-				throw "Parementers must both be of instance: Set";
-			}
-			if(setA.size < 1|| setB.size < 1){
-				throw "Parementer sets must both not be empty";
-			}
-			setA.forEach((e: number)=>	{
-				if(typeof e !== 'number'){
-					throw "Jackscript is a numbers type library, please use numbers only."
-				}
-			});
-			setB.forEach((e: number)=>	{
-				if(typeof e !== 'number'){
-					throw "Jackscript is a numbers type library, please use numbers only."
-				}
-			});
 
-			// start if there are no more errors to be caught:
-			let tempCoordinate:Coordinate = {x:0, y:0};
-			let tempSet = new Set();
+// class Methods{
+// 	static createCartesianProduct = (setA:any, setB:any) =>{
+// 		try{
+// 			if(setA instanceof Set === false || setB instanceof Set === false){
+// 				throw "Parementers must both be of instance: Set";
+// 			}
+// 			if(setA.size < 1|| setB.size < 1){
+// 				throw "Parementer sets must both not be empty";
+// 			}
+// 			setA.forEach((e: number)=>	{
+// 				if(typeof e !== 'number'){
+// 					throw "Jackscript is a numbers type library, please use numbers only."
+// 				}
+// 			});
+// 			setB.forEach((e: number)=>	{
+// 				if(typeof e !== 'number'){
+// 					throw "Jackscript is a numbers type library, please use numbers only."
+// 				}
+// 			});
+
+// 			// start if there are no more errors to be caught:
+// 			let tempCoordinate:Coordinate = {x:0, y:0};
+// 			let tempSet = new Set();
 			
-			setA.forEach(i => {
-				setB.forEach(j => {
-					tempCoordinate = {
-						x:i, 
-						y:j
-					}
-					tempSet.add(tempCoordinate);	
-				})
-			})
-			return tempSet;
-		}catch(err){
-			console.log("Type error: "+err);
-		}
-	}
+// 			setA.forEach(i => {
+// 				setB.forEach(j => {
+// 					tempCoordinate = {
+// 						x:i, 
+// 						y:j
+// 					}
+// 					tempSet.add(tempCoordinate);	
+// 				})
+// 			})
+// 			return tempSet;
+// 		}catch(err){
+// 			console.log("Type error: "+err);
+// 		}
+// 	}
 
-	/*Domain and range test makes use of coordinates(set of coordinates) */
-	// takes a set of coordinates, and returns a set of all the x values
-	static domain = (theset:any) => {
-		// confirm its a set of coords:
-		let resultSet = new Set();
-		theset.forEach((e:Coordinate) => {
-			resultSet.add(e.x);
-		});
-		return resultSet;
-	}
+// 	/*Domain and range test makes use of coordinates(set of coordinates) */
+// 	// takes a set of coordinates, and returns a set of all the x values
+// 	static domain = (theset:any) => {
+// 		// confirm its a set of coords:
+// 		let resultSet = new Set();
+// 		theset.forEach((e:Coordinate) => {
+// 			resultSet.add(e.x);
+// 		});
+// 		return resultSet;
+// 	}
 
-	static range = (theset:any) => {
-		// confirm its a set of coords:
-		let resultSet = new Set();
-		theset.forEach((e:Coordinate) => {
-			resultSet.add(e.y);
-		});
-		return resultSet;
-	}
+// 	static range = (theset:any) => {
+// 		// confirm its a set of coords:
+// 		let resultSet = new Set();
+// 		theset.forEach((e:Coordinate) => {
+// 			resultSet.add(e.y);
+// 		});
+// 		return resultSet;
+// 	}
 
 	// The following functions, i need to remove or change somehow
 	static isSubset = (mainSet: any, theSubset:any ) =>{
@@ -100,33 +109,33 @@ class Methods{
 		return true;
 	}
 
-	// get relation from setA to setB
-	static getRelations = (setA:any, setB:any) =>{
-		let resultSet:any = new Set();
-		setA.forEach((e:number) => {
-			setB.forEach((f: number) => {
-				let tempCoord: Coordinate ={
-					x: e,
-					y: f
-				}
-				resultSet.add(tempCoord);
-			});
-		});
-		return resultSet;
-	}
+// 	// get relation from setA to setB
+// 	static getRelations = (setA:any, setB:any) =>{
+// 		let resultSet:any = new Set();
+// 		setA.forEach((e:number) => {
+// 			setB.forEach((f: number) => {
+// 				let tempCoord: Coordinate ={
+// 					x: e,
+// 					y: f
+// 				}
+// 				resultSet.add(tempCoord);
+// 			});
+// 		});
+// 		return resultSet;
+// 	}
 
-	// make sure that, for A*A sets, second param is a relation on the first param
-	static isRelation = (setA:any, setB:any): boolean =>{
-		let cartesianSet = Methods.getRelations(setA, setA);
-		let setBArray = Array.from(setB);
-		for (let i = 0; i < setBArray.length; i++) {
-			if(!cartesianSet.has(setBArray[i])){
-				return false;
-			}
-		}
-		return true;
-	}
-}
+// 	// make sure that, for A*A sets, second param is a relation on the first param
+// 	static isRelation = (setA:any, setB:any): boolean =>{
+// 		let cartesianSet = Methods.getRelations(setA, setA);
+// 		let setBArray = Array.from(setB);
+// 		for (let i = 0; i < setBArray.length; i++) {
+// 			if(!cartesianSet.has(setBArray[i])){
+// 				return false;
+// 			}
+// 		}
+// 		return true;
+// 	}
+// }
 
 
-export {Methods}
+export { isValidSet, isValidSet2}

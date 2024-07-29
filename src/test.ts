@@ -1,8 +1,8 @@
-/*this is gonna be helpful when i write my MOCHA tests....*/ 
-
+// /*this is gonna be helpful when i write my MOCHA tests....*/ 
+// import Cooordinate from './coordinate'
 
 // // users needs to declare a javascript set and pass in the type of the set:
-// /*let s2 = new Set()
+// let s2 = new Set()
 // let ssmall = new Set<Coordinate>();
 // ssmall.add({x:1, y:2});
 // ssmall.add({x:11, y:22});
@@ -16,7 +16,7 @@
 
 // s2.forEach((e)=>{
 // 	console.log(e)
-// })*/
+// })
 
 // let set1 = new Set([100,200,500]);
 // let set2 = new Set([1000,2000,3000]);
@@ -42,8 +42,8 @@
 
 
 
-// transative tests::
-// let tempset = new Set()
+// // transative tests::
+// // let tempset = new Set()
 // // let xx :Coordinate= {x: 100, y: 100};
 // // tempset.add(xx);
 // // tempset.add({x: 1, y: 1});
