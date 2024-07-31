@@ -1,6 +1,6 @@
 import {Coordinate} from './coordinate.js';
 
-interface JackscriptSet<T extends Set<any>>{};
+// interface JackscriptSet<T extends Set<T>>{};
 
 // function that checks is a set is a valid set or not:
 
@@ -15,19 +15,82 @@ const isValidSet = <T>(theset:Set<T>): boolean =>{
 	return true;
 }
 
-class MySet<T> extends Set<T> {
-	constructor(values?: readonly T[] | null){
-		super(values);
-	}
+class JackscriptSet<T> implements Set<T> {
+    private internalSet: Set<T>;
 
-	createCartesian(...elems: T[]): this {
-		return this;
-	}
+    constructor(values?: Iterable<T> | null) {
+        this.internalSet = new Set(values ?? []);
+    }
 
-	
+    add(value: T): this {
+		console.log("hahahaha");
+        this.internalSet.add(value);
+        return this;
+    }
+
+    clear(): void {
+        this.internalSet.clear();
+    }
+
+    delete(value: T): boolean {
+        return this.internalSet.delete(value);
+    }
+
+    forEach(callbackfn: (value: T, value2: T, set: Set<T>) => void, thisArg?: any): void {
+        this.internalSet.forEach(callbackfn, thisArg);
+    }
+
+    has(value: T): boolean {
+        return this.internalSet.has(value);
+    }
+
+    get size(): number {
+        return this.internalSet.size;
+    }
+
+    [Symbol.iterator](): IterableIterator<T> {
+        return this.internalSet[Symbol.iterator]();
+    }
+
+    entries(): IterableIterator<[T, T]> {
+        return this.internalSet.entries();
+    }
+
+    keys(): IterableIterator<T> {
+        return this.internalSet.keys();
+    }
+
+    values(): IterableIterator<T> {
+        return this.internalSet.values();
+    }
+
+    [Symbol.toStringTag]: string = 'JackscriptSet';
+
+	// The start of my methods:
+	createCartesian<V>(newSet: Set<V>): Set<Coordinate<T, V>> | Set<T> {
+		// if the new set is empty, then return this set:
+		if(newSet.size == 0){
+			return this;
+		}
+		// start if there are no more errors to be caught:
+		let resultSet = new Set<Coordinate<T, V>>();
+		// create a tuple:
+		let mytuple : [T, V];
+		
+		this.forEach((i: T) => {
+			newSet.forEach((j: V) => {
+				mytuple = [ i, j ];
+				resultSet.add(mytuple);	
+			});
+		});
+		return resultSet;
+	}
 }
   
-
+// createCartesian(...elems: T[]): Coordinate<any, any> | Set<T> {
+		
+		
+// }
 
 // class Methods{
 // 	static createCartesianProduct = (setA:any, setB:any) =>{
@@ -139,4 +202,4 @@ class MySet<T> extends Set<T> {
 // }
 
 
-export { isValidSet, MySet}
+export { isValidSet, JackscriptSet}

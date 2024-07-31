@@ -1,5 +1,5 @@
 import {Coordinate} from './coordinate';
-import {isValidSet, MySet} from './functions'
+import {isValidSet, JackscriptSet} from './functions'
 
 const a = new Set([1,2,3]);
 console.log(a);
@@ -12,4 +12,9 @@ console.log(isValidSet(new Set<number>));
 
 console.log("_____ \n");
 
-// MySet.add();
+// lets declare the Jacksript set:
+let jset = new JackscriptSet<number>();
+jset.add(1);
+
+
+console.log(jset);

@@ -1,6 +1,5 @@
-interface Coordinate<T> {
-  x: T,
-  y: T
-}
+type Coordinate<T, V> = [T, V];
+
+
 export {Coordinate};
 
