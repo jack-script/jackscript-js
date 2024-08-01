@@ -22,9 +22,11 @@ class JackscriptSet<T> implements Set<T> {
         this.internalSet = new Set(values ?? []);
     }
 
-    add(value: T): this {
+    add(...value: T[]): this {
 		console.log("hahahaha");
-        this.internalSet.add(value);
+		value.forEach((value: T)=>{
+			this.internalSet.add(value);
+		})
         return this;
     }
 
@@ -32,8 +34,12 @@ class JackscriptSet<T> implements Set<T> {
         this.internalSet.clear();
     }
 
-    delete(value: T): boolean {
-        return this.internalSet.delete(value);
+    delete(...value: T[]): boolean {
+		let exists: boolean = false;
+		value.forEach((value: T)=>{
+			exists = this.internalSet.delete(value);
+		})
+        return exists;
     }
 
     forEach(callbackfn: (value: T, value2: T, set: Set<T>) => void, thisArg?: any): void {
