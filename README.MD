@@ -12,6 +12,7 @@ import {Coordinate} from 'jackscriptjs';
 ```
 ##### How this library works:
 This library is about sets.
+Jackscript implements Set.
 This library is Generic, meaning you can use any primitive. You are allowed to use strings, numbers, or any other type.
 
 The Coordinate Declaration is as follows: This is basically a tuple.
@@ -49,6 +50,19 @@ JackscriptSet {
   [Symbol(Symbol.toStringTag)]: 'JackscriptSet'
 }
 ```
+
+A minor difference between Set() and JackscriptSet(), is that in Jackscript the methods `add()` and `delete()` are a bit different.
+In Set(), you are only allowed to pass in one argument for these methods. Whereas in Jackscript, you may pass in multiple arugments:
+```javascript
+import {JackscriptSet, Coordinate} from 'jackscriptjs';
+
+let a = new JackscriptSet<number>();
+a.add(1,2,3); // this is allowed
+a.delete(2,3); // this is also allowed
+
+// All other Set methods are the same. 
+```
+...And that is the core difference between Set and Jacksript set. 
 
 
 
