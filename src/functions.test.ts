@@ -1,4 +1,5 @@
 import { JackscriptSet } from './functions';
+import { Coordinate } from './coordinate';
 
 describe('Jackscript class, Implements methods', () => {
 
@@ -27,14 +28,33 @@ describe('Jackscript class, Implements methods', () => {
       expect(testSet.delete(33)).toBe(false);
     })
 
-	// Test realting to the has and size methods:
+	// Test relating to the has and size methods:
 	it('Does the element exist in the set.', ()=>{
 		expect(testSet.has(1)).toBe(true);
 	})
 	it('Get the size of the set.', ()=>{
 		expect(testSet.size).toBe(6);
 	})
+});
+
+describe('Jackscript class, Relation methods', () => {
+
+	// let setA : JackscriptSet<number>;
+	// let setB : JackscriptSet<number>;
 
 
+	// beforeEach(() => {
+	// 	setA = new JackscriptSet<number>([1,2]);
+	// 	setB = new JackscriptSet<number>([4,5]);
+	// });
 
+	// it('Create cartesian product', ()=>{
+	// 	let result = new JackscriptSet<Coordinate<number, number>>([1,3 ]);
+	// 	let tup: Coordinate<number, number> = [1,4];
+
+
+	// 	result.add();
+	// 	expect(setA.createCartesian(setB).toStrictEqual(result));
+	// })
+	
 });

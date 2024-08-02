@@ -23,7 +23,7 @@ class JackscriptSet<T> implements Set<T> {
     }
 
     add(...value: T[]): this {
-		console.log("hahahaha");
+		
 		value.forEach((value: T)=>{
 			this.internalSet.add(value);
 		})
@@ -78,9 +78,8 @@ class JackscriptSet<T> implements Set<T> {
 		if(newSet.size == 0){
 			return this;
 		}
-		// start if there are no more errors to be caught:
+		// create a set of coordinates and a tuple:
 		let resultSet = new Set<Coordinate<T, V>>();
-		// create a tuple:
 		let mytuple : [T, V];
 		
 		this.forEach((i: T) => {
@@ -99,43 +98,6 @@ class JackscriptSet<T> implements Set<T> {
 // }
 
 // class Methods{
-// 	static createCartesianProduct = (setA:any, setB:any) =>{
-// 		try{
-// 			if(setA instanceof Set === false || setB instanceof Set === false){
-// 				throw "Parementers must both be of instance: Set";
-// 			}
-// 			if(setA.size < 1|| setB.size < 1){
-// 				throw "Parementer sets must both not be empty";
-// 			}
-// 			setA.forEach((e: number)=>	{
-// 				if(typeof e !== 'number'){
-// 					throw "Jackscript is a numbers type library, please use numbers only."
-// 				}
-// 			});
-// 			setB.forEach((e: number)=>	{
-// 				if(typeof e !== 'number'){
-// 					throw "Jackscript is a numbers type library, please use numbers only."
-// 				}
-// 			});
-
-// 			// start if there are no more errors to be caught:
-// 			let tempCoordinate:Coordinate = {x:0, y:0};
-// 			let tempSet = new Set();
-			
-// 			setA.forEach(i => {
-// 				setB.forEach(j => {
-// 					tempCoordinate = {
-// 						x:i, 
-// 						y:j
-// 					}
-// 					tempSet.add(tempCoordinate);	
-// 				})
-// 			})
-// 			return tempSet;
-// 		}catch(err){
-// 			console.log("Type error: "+err);
-// 		}
-// 	}
 
 // 	/*Domain and range test makes use of coordinates(set of coordinates) */
 // 	// takes a set of coordinates, and returns a set of all the x values

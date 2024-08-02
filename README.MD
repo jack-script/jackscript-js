@@ -12,23 +12,48 @@ import {Coordinate} from 'jackscriptjs';
 ```
 ##### How this library works:
 This library is about sets.
-This library is meant to be used with numbers and coordinates. Meaning when a user of this library inserts elements inside the sets, it should be that they inserts numbers and not strings or other types.
-Coordinates are created as follows:
+This library is Generic, meaning you can use any primitive. You are allowed to use strings, numbers, or any other type.
+
+The Coordinate Declaration is as follows: This is basically a tuple.
 ```typescript 
-let myCoord:Coordinate = {
-	x: 1,
-	y:2
-}
+type Coordinate<T, V> = [T, V];
 ```   
-From the above example, a coordinate is being created(which is a normal object in javascript) but has the Coordinate type(if using typescript)
 
 
 #### How to create a set:
-Sets are created how you would normally create your set in javascript; as said earlier This library consists of a set of functions and doesn't make any new data structures.
+Sets are created how you would normally create your set in javascript.
 Therefore all set methods from the javascript standard library will work like usual
 ```javascript 
-mySet = set()
+let mySet = set()
 ```
+
+However, we also introduce a new Set called `JackscriptSet` and this is how you use it:
+```javascript
+
+// first import the set and the coordinate type:
+import {JackscriptSet, Coordinate} from 'jackscriptjs';
+
+// instantiate your set:
+let a = new JackscriptSet<number>();
+let b = new JackscriptSet<number>();
+
+// use the usual set methods, like you would in an other javascipt program:
+a.add(100);
+a.add(200)
+console.log(a);
+```
+This will return:
+```
+JackscriptSet {
+  internalSet: Set(2) { 100, 200 },
+  [Symbol(Symbol.toStringTag)]: 'JackscriptSet'
+}
+```
+
+
+
+
+
 #### All functions:
 This library consists of 2 sets of functions
 1. The Functions that can be called normally

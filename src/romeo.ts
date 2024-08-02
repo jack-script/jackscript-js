@@ -1,20 +1,35 @@
 import {Coordinate} from './coordinate';
 import {isValidSet, JackscriptSet} from './functions'
 
-const a = new Set([1,2,3]);
-// console.log(a);
-
-// check if a set is valid or not
-
-
-
-// console.log(isValidSet(new Set<number>));
-
-// console.log("_____ \n");
 
 // lets declare the Jacksript set:
-let jset = new JackscriptSet<number>();
-jset.add(1);
+let a = new JackscriptSet<number>();
+let b = new JackscriptSet<number>();
+let javascriptSet = new Set([100,200]);
+
+// a.add(1,2,3,4);
+// b.add(6,7,8,9);
+
+// // console.log(a)
+// // console.log(b);
+
+// let aToB = a.createCartesian(b);
+// let aToJavascriptSet = a.createCartesian(javascriptSet);
+
+// console.log(aToJavascriptSet);
+
+// // lets create a coordinate and add it to the set:
+
+// let coordinate1: Coordinate<number, string> = [1,'a'];
+
+// // lets say c is a set of coordinates:
+// let c = new JackscriptSet<Coordinate<number, string>>();
+// c.add(coordinate1);
+// c.add([4, 'b']);
+
+// console.log(c);
 
 
-// console.log(jset);
+a.add(100);
+a.add(200)
+console.log(a);
