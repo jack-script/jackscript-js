@@ -73,13 +73,13 @@ class JackscriptSet<T> implements Set<T> {
     [Symbol.toStringTag]: string = 'JackscriptSet';
 
 	// The start of my methods:
-	createCartesian<V>(newSet: Set<V>): Set<Coordinate<T, V>> | Set<T> {
+	createCartesian<V>(newSet: Set<V>): JackscriptSet<Coordinate<T, V>> | JackscriptSet<T> {
 		// if the new set is empty, then return this set:
 		if(newSet.size == 0){
 			return this;
 		}
 		// create a set of coordinates and a tuple:
-		let resultSet = new Set<Coordinate<T, V>>();
+		let resultSet = new JackscriptSet<Coordinate<T, V>>();
 		let mytuple : [T, V];
 		
 		this.forEach((i: T) => {

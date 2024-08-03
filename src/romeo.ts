@@ -1,4 +1,4 @@
-import {Coordinate} from './coordinate';
+import {Coordinate, Relation} from './coordinate';
 import {isValidSet, JackscriptSet} from './functions'
 
 
@@ -13,8 +13,9 @@ let javascriptSet = new Set([100,200]);
 // // console.log(a)
 // // console.log(b);
 
-// let aToB = a.createCartesian(b);
-// let aToJavascriptSet = a.createCartesian(javascriptSet);
+let aToB: Relation<number, number> = a.createCartesian(b);
+console.log(aToB);
+let aToJavascriptSet = a.createCartesian(javascriptSet);
 
 // console.log(aToJavascriptSet);
 

@@ -1,5 +1,10 @@
+import { JackscriptSet } from "./functions";
+
 type Coordinate<T, V> = [T, V];
 
 
-export {Coordinate};
+type Relation<T,V> = JackscriptSet<Coordinate<T, V>>;
+
+
+export {Coordinate, Relation};
 
