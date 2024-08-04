@@ -73,9 +73,6 @@ class JackscriptSet<T> implements Set<T> {
     [Symbol.toStringTag]: string = 'JackscriptSet';
 
 	/*Start of the additional methods*/
-
-	// print()
-
 	createCartesian<V>(newSet: Set<V>): Relation<T,V> {
 		// if the new set is empty, then return this set:
 		if(newSet.size == 0){
@@ -117,79 +114,45 @@ class JackscriptSet<T> implements Set<T> {
 		}
 		return result;
 	}
+
+	static domain<T, V>(theset:Relation<T, V>): Set<T>{
+		let result = new Set<T>();
+		for(let item of theset.internalSet){
+			result.add(item[0]);
+		}
+		return result;
+	}
+
+	static range<T, V>(theset:Relation<T, V>): Set<T>{
+		let result = new Set<T>();
+		for(let item of theset.internalSet){
+			result.add(item[1]);
+		}
+		return result;
+	}
+
+	// isSubsetOf:
+	isSubsetOf(theSet: JackscriptSet<T>): Boolean{
+		for (let item of this.internalSet) {
+			if(theSet.internalSet.has(item) === false){
+				return false;
+			}
+		}
+		return true;
+	}
+	// isSupersetOf():
+	isSupersetOf(theSet: JackscriptSet<T>): Boolean{
+		for (let item of theSet.internalSet) {
+			if(this.internalSet.has(item) === false){
+				return false;
+			}
+		}
+		return true;
+	}
 }
-  
-// class Methods{
 
-// 	/*Domain and range test makes use of coordinates(set of coordinates) */
-// 	// takes a set of coordinates, and returns a set of all the x values
-// 	static domain = (theset:any) => {
-// 		// confirm its a set of coords:
-// 		let resultSet = new Set();
-// 		theset.forEach((e:Coordinate) => {
-// 			resultSet.add(e.x);
-// 		});
-// 		return resultSet;
-// 	}
 
-// 	static range = (theset:any) => {
-// 		// confirm its a set of coords:
-// 		let resultSet = new Set();
-// 		theset.forEach((e:Coordinate) => {
-// 			resultSet.add(e.y);
-// 		});
-// 		return resultSet;
-// 	}
 
-	// The following functions, i need to remove or change somehow
-	// static isSubset = (mainSet: any, theSubset:any ) =>{
-	// 	let tempSubsetArray: number|Coordinate[] = Array.from(theSubset);
-	// 	let tempMainSetArray: any = Array.from(mainSet);
-	// 	for (let i = 0; i < tempSubsetArray.length; i++) {
-	// 		if(tempMainSetArray.includes(tempSubsetArray[i]) === false){
-	// 			return false;
-	// 		}
-	// 	}
-	// 	return true;
-	// }	
-	// static isSuperset = (theSuperSet: any, theNormalSet:any) =>{
-	// 	let theNormalArray: number|Coordinate[] = Array.from(theNormalSet);
-	// 	let theSuperArray: any = Array.from(theSuperSet);
-	// 	for (let i = 0; i < theNormalArray.length; i++) {
-	// 		if(theSuperArray.includes(theNormalArray[i]) === false){
-	// 			return false;
-	// 		}
-	// 	}
-	// 	return true;
-	// }
-
-// 	// get relation from setA to setB
-// 	static getRelations = (setA:any, setB:any) =>{
-// 		let resultSet:any = new Set();
-// 		setA.forEach((e:number) => {
-// 			setB.forEach((f: number) => {
-// 				let tempCoord: Coordinate ={
-// 					x: e,
-// 					y: f
-// 				}
-// 				resultSet.add(tempCoord);
-// 			});
-// 		});
-// 		return resultSet;
-// 	}
-
-// 	// make sure that, for A*A sets, second param is a relation on the first param
-// 	static isRelation = (setA:any, setB:any): boolean =>{
-// 		let cartesianSet = Methods.getRelations(setA, setA);
-// 		let setBArray = Array.from(setB);
-// 		for (let i = 0; i < setBArray.length; i++) {
-// 			if(!cartesianSet.has(setBArray[i])){
-// 				return false;
-// 			}
-// 		}
-// 		return true;
-// 	}
-// }
 
 
 export { isValidSet, JackscriptSet}

@@ -7,12 +7,24 @@ import {isValidSet, JackscriptSet} from './functions'
 // lets declare the Jacksript set:
 let setA = new JackscriptSet<number>();
 let setB = new JackscriptSet<number>();
+
+let nsetA: any = new Set<number>([1,2,3]);
+let nsetB: any = new Set<number>([4,5,6]);
+
 setA.add(1,2,6);
 setB.add(6,7);
 
 // setC is a union of setA and B:
 let setC = JackscriptSet.intersect(setA, setB);
-setC.print();
+// setC.print();
+
+let setD_relation: Relation<number, number> = setA.createCartesian(setB);
+let domainVariable = JackscriptSet.domain(setD_relation);
+// console.log(domainVariable);
+
+
+console.log(nsetA.isSubsetOf(nsetB));
+
 
 
 

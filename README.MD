@@ -15,10 +15,14 @@ This library is about sets.
 Jackscript implements Set.
 This library is Generic, meaning you can use any primitive. You are allowed to use strings, numbers, or any other type.
 
-The Coordinate Declaration is as follows: This is basically a tuple.
+The Coordinate declaration is as follows: This is basically a tuple.
 ```typescript 
 type Coordinate<T, V> = [T, V];
 ```   
+We also introduce a type called Relation which is of the type `Jacksript` of which we introduce in the next section:
+```typescript
+type Relation<T, V> = JackscriptSet<Coordinate<T, V>> | JackscriptSet<T>;
+```
 
 
 #### How to create a set:
@@ -64,7 +68,44 @@ a.delete(2,3); // this is also allowed
 ```
 ...And that is the core difference between Set and Jacksript set. 
 
+#### Print your set:
+This is how you print your set:
+```typescript
+let a = new JackscriptSet<number>();
+a.add(1,2,3); 
+a.print();
+```
 
+This will return:
+```
+1
+2
+3
+```
+### Static set methods:
+#### Intersects, union, domain, range:
+```javascript
+
+let setA = new JackscriptSet<number>();
+let setB = new JackscriptSet<number>();
+setA.add(1,2,6);
+setB.add(6,7);
+
+// setC is a union of setA and B:
+let setC = JackscriptSet.intersect(setA, setB);
+setC.print(); // returns 6
+
+let setD_relation: Relation<number, number> = setA.createCartesian(setB);
+
+let domainVariable = JackscriptSet.domain(setD_relation);
+console.log(domainVariable); // returns 1,2,6
+```
+
+
+
+
+
+`-----------------------------------`
 
 
 
