@@ -74,6 +74,8 @@ class JackscriptSet<T> implements Set<T> {
 
 	/*Start of the additional methods*/
 
+	// print()
+
 	createCartesian<V>(newSet: Set<V>): Relation<T,V> {
 		// if the new set is empty, then return this set:
 		if(newSet.size == 0){
@@ -90,6 +92,30 @@ class JackscriptSet<T> implements Set<T> {
 			});
 		});
 		return resultSet;
+	}
+
+	print(): void{
+		for(let item of this.internalSet){
+			console.log(item);
+		}
+	}
+
+	static intersect<T>(set1: Set<T>, set2: Set<T>): JackscriptSet<T> {
+		const result = new JackscriptSet<T>();
+		for(let i =0; i < set1.size; i++){
+			if (set2.has(set1[i])) {
+				result.add(set1[i]);
+			}
+		}
+		return result;
+	}
+	
+	static union<T>(set1: Set<T>, set2: Set<T>): JackscriptSet<T> {
+		const result = new JackscriptSet<T>(set1);
+		for(let i =0; i < set2.size; i++){
+			result.add(set2[i]);
+		}
+		return result;
 	}
 }
   

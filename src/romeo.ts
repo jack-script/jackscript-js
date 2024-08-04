@@ -5,15 +5,24 @@ import {isValidSet, JackscriptSet} from './functions'
 // Keep them seperate... Dont try to run jackscriptset operations/methods on a realtion type.
 
 // lets declare the Jacksript set:
-let a = new JackscriptSet<number>();
-let b = new JackscriptSet<number>();
-let javascriptSet = new Set([100,200]);
+let setA = new JackscriptSet<number>();
+let setB = new JackscriptSet<number>();
+setA.add(1,2,6);
+setB.add(6,7);
 
-a.add(1,2,3,4);
-b.add(6,7,8,9);
+let myarray : Coordinate<number, number> [] = [[1,6], [1,7], [2,6], [2,7]];
+let cart : Relation<number, number> = setA.createCartesian(setB);
+// console.log(cart);
 
-let aToB: Relation<number, number> = a.createCartesian<number>(b);
-console.log('Relation from a to b is :  ', aToB);
+let a = new Set<number>();
+a =  JackscriptSet.union(setA, setB);
+// a.forEach((item: any)=>{
+//     console.log(a);
+// })
+setA.print();
+
+
+// let result : Relation<number, number> = new JackscriptSet<Coordinate<number, number>>(myarray)
 
 
 // create a new jacksript set of the type relation:
@@ -25,7 +34,7 @@ let coordinate2: Coordinate<number, number> = [800, 900];
 
 RelationSet.add(coordinate, coordinate2)
 
-console.log(RelationSet);
+// console.log(RelationSet);
 
 
 
