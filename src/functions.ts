@@ -102,9 +102,9 @@ class JackscriptSet<T> implements Set<T> {
 
 	static intersect<T>(set1: Set<T>, set2: Set<T>): JackscriptSet<T> {
 		const result = new JackscriptSet<T>();
-		for(let i =0; i < set1.size; i++){
-			if (set2.has(set1[i])) {
-				result.add(set1[i]);
+		for(let item of set1){
+			if (set2.has(item)) {
+				result.add(item);
 			}
 		}
 		return result;

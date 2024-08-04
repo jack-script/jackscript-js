@@ -11,7 +11,7 @@ setA.add(1,2,6);
 setB.add(6,7);
 
 // setC is a union of setA and B:
-let setC = JackscriptSet.union(setA, setB);
+let setC = JackscriptSet.intersect(setA, setB);
 setC.print();
 
 
