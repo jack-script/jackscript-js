@@ -10,6 +10,13 @@ let setB = new JackscriptSet<number>();
 setA.add(1,2,6);
 setB.add(6,7);
 
+// setC is a union of setA and B:
+let setC = JackscriptSet.union(setA, setB);
+setC.print();
+
+
+
+
 let myarray : Coordinate<number, number> [] = [[1,6], [1,7], [2,6], [2,7]];
 let cart : Relation<number, number> = setA.createCartesian(setB);
 // console.log(cart);
@@ -19,7 +26,7 @@ a =  JackscriptSet.union(setA, setB);
 // a.forEach((item: any)=>{
 //     console.log(a);
 // })
-setA.print();
+
 
 
 // let result : Relation<number, number> = new JackscriptSet<Coordinate<number, number>>(myarray)

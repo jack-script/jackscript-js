@@ -112,8 +112,8 @@ class JackscriptSet<T> implements Set<T> {
 	
 	static union<T>(set1: Set<T>, set2: Set<T>): JackscriptSet<T> {
 		const result = new JackscriptSet<T>(set1);
-		for(let i =0; i < set2.size; i++){
-			result.add(set2[i]);
+		for(let item of set2){
+			result.add(item);
 		}
 		return result;
 	}
