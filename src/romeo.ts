@@ -10,68 +10,26 @@ let setB = new JackscriptSet<number>();
 
 let nsetA: any = new Set<number>([1,2,3]);
 let nsetB: any = new Set<number>([4,5,6]);
-
 setA.add(1,2,6);
 setB.add(6,7);
 
-// setC is a union of setA and B:
-let setC = JackscriptSet.intersect(setA, setB);
-// setC.print();
-
-let setD_relation: Relation<number, number> = setA.createCartesian(setB);
-let domainVariable = JackscriptSet.domain(setD_relation);
-// console.log(domainVariable);
+let setR: Relation<number, number> = setA.createCartesian(setB);
 
 
-console.log(nsetA.isSubsetOf(nsetB));
-
-
-
-
-
+// create a test Coordinate array and add these values in a test Relation set, then compare the sets:
+// let testRelation: Relation<number, number> = new JackscriptSet<number>();
+let test = new JackscriptSet<Coordinate<number, number>>();
 let myarray : Coordinate<number, number> [] = [[1,6], [1,7], [2,6], [2,7]];
-let cart : Relation<number, number> = setA.createCartesian(setB);
-// console.log(cart);
 
-let a = new Set<number>();
-a =  JackscriptSet.union(setA, setB);
-// a.forEach((item: any)=>{
-//     console.log(a);
-// })
+for(let item of myarray){
+    test.add(item);
+}
+test.print();
 
-
-
-// let result : Relation<number, number> = new JackscriptSet<Coordinate<number, number>>(myarray)
-
-
-// create a new jacksript set of the type relation:
-let RelationSet = new JackscriptSet<Coordinate<number, number>>();
-let coordinate: Coordinate<number, number>;
-coordinate = [100,200];
-let coordinate2: Coordinate<number, number> = [800, 900];
-
-
-RelationSet.add(coordinate, coordinate2)
-
-// console.log(RelationSet);
+// console.log(JackscriptSet.domain(setR));
 
 
 
 
-
-
-// let aToJavascriptSet = a.createCartesian(javascriptSet);
-
-// console.log(aToJavascriptSet);
-
-// // lets create a coordinate and add it to the set:
-
-// let coordinate1: Coordinate<number, string> = [1,'a'];
-
-// // lets say c is a set of coordinates:
-// let c = new JackscriptSet<Coordinate<number, string>>();
-// c.add(coordinate1);
-// c.add([4, 'b']);
-
-// console.log(c);
-
+// let myarray : Coordinate<number, number> [] = [[1,6], [1,7], [2,6], [2,7]];
+// let cart : Relation<number, number> = setA.createCartesian(setB);

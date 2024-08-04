@@ -98,9 +98,13 @@ setC.print(); // returns 6
 let setD_relation: Relation<number, number> = setA.createCartesian(setB);
 
 let domainVariable = JackscriptSet.domain(setD_relation);
+let rangeVariable = JackscriptSet.range(setD_relation);
 console.log(domainVariable); // returns 1,2,6
+console.log(rangeVariable); // returns 6,7
 ```
 
+#### IsSubsetOf() and IsSupersetOf()
+IsSubsetOf() and IsSuperSetOf() are used exactly how you would if your were to use Javascript Sets.
 
 
 
