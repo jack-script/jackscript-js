@@ -1,4 +1,4 @@
-import {Coordinate} from './coordinate.js';
+import {Coordinate, Relation} from './coordinate.js';
 
 // interface JackscriptSet<T extends Set<T>>{};
 
@@ -72,8 +72,9 @@ class JackscriptSet<T> implements Set<T> {
 
     [Symbol.toStringTag]: string = 'JackscriptSet';
 
-	// The start of my methods:
-	createCartesian<V>(newSet: Set<V>): JackscriptSet<Coordinate<T, V>> | JackscriptSet<T> {
+	/*Start of the additional methods*/
+
+	createCartesian<V>(newSet: Set<V>): Relation<T,V> {
 		// if the new set is empty, then return this set:
 		if(newSet.size == 0){
 			return this;
@@ -92,11 +93,6 @@ class JackscriptSet<T> implements Set<T> {
 	}
 }
   
-// createCartesian(...elems: T[]): Coordinate<any, any> | Set<T> {
-		
-		
-// }
-
 // class Methods{
 
 // 	/*Domain and range test makes use of coordinates(set of coordinates) */

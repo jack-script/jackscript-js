@@ -52,7 +52,7 @@ JackscriptSet {
 ```
 
 A minor difference between Set() and JackscriptSet(), is that in Jackscript the methods `add()` and `delete()` are a bit different.
-In Set(), you are only allowed to pass in one argument for these methods. Whereas in Jackscript, you may pass in multiple arugments:
+In Set(), you are only allowed to pass in one argument for these methods. Whereas in Jackscript, you may pass in multiple arguments:
 ```javascript
 import {JackscriptSet, Coordinate} from 'jackscriptjs';
 
