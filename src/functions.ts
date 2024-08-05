@@ -46,7 +46,7 @@ class JackscriptSet<T> implements Set<T> {
         this.internalSet.forEach(callbackfn, thisArg);
     }
 
-    has(value: T): boolean {
+    has(value: T ): boolean {
         return this.internalSet.has(value);
     }
 
@@ -147,6 +147,53 @@ class JackscriptSet<T> implements Set<T> {
 				return false;
 			}
 		}
+		return true;
+	}
+
+	// let A<number> = {1,2,3}
+	// let B<number | string> = {1,a,c}
+	// R: Coordinate<number, string> = { (1,1) , (2,2), (3,3)}
+
+	isReflexive(theSet: JackscriptSet<Coordinate<T, any>>) : Boolean {
+		let testCoordinate: Coordinate<T,T>;
+
+		for(let elem of this.internalSet){
+			testCoordinate = [elem, elem];
+			
+			if(!theSet.has(testCoordinate)){
+				console.log("i have found a mismatch");
+				// console.log("elem: ", testCoordinate, " and theSet.Internalset is : ", theSet.internalSet);
+				console.log(testCoordinate === theSet.internalSet[0])
+				
+				return false;
+			}
+		}
+		
+		return true;
+	}
+
+	isIrreflexive(theSet: JackscriptSet<Coordinate<T, any>>) : Boolean {
+		let testCoordinate: Coordinate<T,T>;
+
+		for(let elem of this.internalSet){
+			testCoordinate = [elem, elem];
+
+			if(theSet.has(testCoordinate)){
+				return false;
+			}
+		}
+		return true;
+	}
+
+	isSymmetric(theSet: JackscriptSet<T>) : Boolean {
+		return true;
+	}
+
+	isAntisymmetric(theSet: JackscriptSet<T>) : Boolean {
+		return true;
+	}
+
+	isTransitive(theSet: JackscriptSet<T>) : Boolean {
 		return true;
 	}
 }
