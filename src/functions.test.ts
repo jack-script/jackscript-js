@@ -4,17 +4,18 @@ import { Coordinate, Relation } from './coordinate';
 describe('Jackscript class, Implements methods', () => {
 
 	let testSet : JackscriptSet<number>;
+	let testSet2 : JackscriptSet<number>;
 
 	beforeEach(() => {
 		testSet = new JackscriptSet<number>([1,2,3,4,5,6]);
+		testSet2 = new JackscriptSet<number>([3,4,5]);
 	});
 	
     // Tests relating to the add method: 
     it('Add a value to the set.', () => {
       expect(testSet.add(4)).toStrictEqual(testSet);
     }),
-
-    
+  
     it('Add a value to the set, but add multiple values at once.',()=>{
       let result = new JackscriptSet<number>([1,2,3,4,5,6,7,8,9]);
       expect(testSet.add(7,8,9)).toStrictEqual(result);
@@ -35,7 +36,50 @@ describe('Jackscript class, Implements methods', () => {
 	it('Get the size of the set.', ()=>{
 		expect(testSet.size).toBe(6);
 	})
+
+	
+	
 });
+
+// Static methods testing:
+describe('Jackscript class, Static methods', () => {
+	let testSet : JackscriptSet<number>;
+	let testSet2 : JackscriptSet<number>;
+	let testSet3  : JackscriptSet<number>;
+	let testSet4, testSet5 : JackscriptSet<string>;
+
+	beforeEach(() => {
+		testSet = new JackscriptSet<number>([1,2,3,4,5,6]);
+		testSet2 = new JackscriptSet<number>([3,4,5]);
+		testSet3 = new JackscriptSet<number>([2]);
+		testSet4 = new JackscriptSet<string>("samuel")
+		testSet5 = new JackscriptSet<string>("sam");
+	});
+
+	// Test the intersects method:
+	it('Does the function detect the correct intersect elements.', ()=>{
+		let result = new JackscriptSet<number>;
+		result.add(3,4,5);
+		expect(JackscriptSet.intersect(testSet, testSet2)).toStrictEqual(result);
+	})
+
+	// Test the intersects method:
+	it('Does the function detect the correct intersect elements.', ()=>{
+		let result = new JackscriptSet<number>;
+		result.add(2);
+		expect(JackscriptSet.intersect(testSet, testSet3)).toStrictEqual(result);
+	})
+
+	// Test the intersects method:
+	it('Does the function detect the correct intersect elements.', ()=>{
+		let result = new JackscriptSet<string>;
+		result.add('s', 'a', 'm');
+		expect(JackscriptSet.intersect(testSet4, testSet5)).toStrictEqual(result);
+	})
+});
+
+
+
 
 describe('Jackscript class, Relation methods', () => {
 
