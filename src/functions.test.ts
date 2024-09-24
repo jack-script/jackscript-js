@@ -56,25 +56,39 @@ describe('Jackscript class, Static methods', () => {
 		testSet5 = new JackscriptSet<string>("sam");
 	});
 
-	// Test the intersects method:
+	// Test the intersect method:
 	it('Does the function detect the correct intersect elements.', ()=>{
 		let result = new JackscriptSet<number>;
 		result.add(3,4,5);
 		expect(JackscriptSet.intersect(testSet, testSet2)).toStrictEqual(result);
 	})
 
-	// Test the intersects method:
+	// Test the intersect method with numbers:
 	it('Does the function detect the correct intersect elements.', ()=>{
 		let result = new JackscriptSet<number>;
 		result.add(2);
 		expect(JackscriptSet.intersect(testSet, testSet3)).toStrictEqual(result);
 	})
 
-	// Test the intersects method:
+	// Test the intersect method with strings:
 	it('Does the function detect the correct intersect elements.', ()=>{
 		let result = new JackscriptSet<string>;
 		result.add('s', 'a', 'm');
 		expect(JackscriptSet.intersect(testSet4, testSet5)).toStrictEqual(result);
+	})
+
+	// Test the union method with numbers:
+	it('Does the function detect the correct union elements.', ()=>{
+		let result = new JackscriptSet<number>;
+		result.add(1,2,3,4,5,6);
+		expect(JackscriptSet.union(testSet, testSet2)).toStrictEqual(result);
+	})
+
+	// Test the union method with strings:
+	it('Does the function detect the correct union elements.', ()=>{
+		let result = new JackscriptSet<string>;
+		result.add('s', 'a', 'm', 'u', 'e', 'l');
+		expect(JackscriptSet.union(testSet4, testSet5)).toStrictEqual(result);
 	})
 });
 

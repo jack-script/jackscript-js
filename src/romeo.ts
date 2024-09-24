@@ -51,4 +51,4 @@ let testSet4 = new JackscriptSet<string>("samuel")
 let testSet5 = new JackscriptSet<string>("sam");
 let result = new JackscriptSet<string>;
 // result.add("sam");
-console.log(JackscriptSet.intersect(testSet4, testSet5));
+console.log(JackscriptSet.union(testSet4, testSet5));
