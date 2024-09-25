@@ -90,6 +90,19 @@ describe('Jackscript class, Static methods', () => {
 		result.add('s', 'a', 'm', 'u', 'e', 'l');
 		expect(JackscriptSet.union(testSet4, testSet5)).toStrictEqual(result);
 	})
+
+	// Test the domain method with numbers:
+	// it('Does the function detect the correct union elements.', ()=>{
+	// 	let test : Relation<number, number> = testSet.createCartesian(testSet2);
+	// 	let result = new JackscriptSet<number>;
+	// 	result.add(1,2,3,4,5,6);
+	// 	expect(JackscriptSet.domain(test)).toBe(result);
+	// })
+	// Test the domain method with strings:
+
+	// Test the range method with numbers:
+
+	// Test the range method with strings:
 });
 
 

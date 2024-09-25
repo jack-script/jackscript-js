@@ -22,6 +22,10 @@ class JackscriptSet<T> implements Set<T> {
         this.internalSet = new Set(values ?? []);
     }
 
+	internalset(): any{
+		return this.internalSet;
+	}
+
     add(...value: T[]): this {
 		
 		value.forEach((value: T)=>{
