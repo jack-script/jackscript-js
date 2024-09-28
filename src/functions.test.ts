@@ -43,9 +43,7 @@ describe('Jackscript class, Implements methods', () => {
 
 // Static methods testing:
 describe('Jackscript class, Static methods', () => {
-	let testSet : JackscriptSet<number>;
-	let testSet2 : JackscriptSet<number>;
-	let testSet3  : JackscriptSet<number>;
+	let testSet, testSet2, testSet3 : JackscriptSet<number>;
 	let testSet4, testSet5 : JackscriptSet<string>;
 
 	beforeEach(() => {
@@ -105,6 +103,37 @@ describe('Jackscript class, Static methods', () => {
 	// Test the range method with strings:
 });
 
+
+describe('Jackscript class, Subset and Superset tests.', () => {
+	let testSet, testSet2, testSet3, testSetDuplicate : JackscriptSet<number>;
+	let testSet4, testSet5 : JackscriptSet<string>;
+
+	beforeEach(() => {
+		testSet = new JackscriptSet<number>([1,2,3,4,5,6]);
+		testSetDuplicate = new JackscriptSet<number>([1,2,3,4,5,6]);
+		testSet2 = new JackscriptSet<number>([3,4,5]);
+		testSet3 = new JackscriptSet<number>([3,4,5,7]);
+		testSet4 = new JackscriptSet<string>("samuel")
+		testSet5 = new JackscriptSet<string>("sam");
+	});
+
+	// numbers:
+	it('Does the function detect is isSubsetOf returns the correct boolean value.', ()=>{
+		expect(testSetDuplicate.isSubsetOf(testSet)).toBe(true);
+	})
+	it('Does the function detect is isSubsetOf returns the correct boolean value.', ()=>{
+		expect(testSet3.isSubsetOf(testSet)).toBe(false);
+	})
+	it('Does the function detect is isSubsetOf returns the correct boolean value.', ()=>{
+		expect(testSet3.isSubsetOf(testSet)).toBe(false);
+	})
+
+	// strings:
+	it('Does the function detect is isSubsetOf returns the correct boolean value.', ()=>{
+		expect(testSet5.isSubsetOf(testSet4)).toBe(true);
+	})
+	
+});
 
 
 

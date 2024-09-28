@@ -58,11 +58,17 @@ let result = new JackscriptSet<string>;
 // console.log(JackscriptSet.domain(setR));
 // console.log(JackscriptSet.range(setR));
 
+
+// Testing of the domain::: not done:
 let testSet = new JackscriptSet<number>([1,2,3,4,5,6]);
 let testSet2 = new JackscriptSet<number>([3,4,5]);
 let water : Relation<number, number> = testSet.createCartesian(testSet2);
-
 let domainTest = new JackscriptSet<number>([1,2,3,4,5,6])
 let domainTest2 = JackscriptSet.domain(water)
 // console.log(typeof domainTest.internalset());
-console.log(setValuesEqual(domainTest2, domainTest.internalset()))
+// console.log(setValuesEqual(domainTest2, domainTest.internalset()))
+
+let testSetSubset = new JackscriptSet<number>([1,2]);
+console.log(testSetSubset.isSubsetOf(testSet));
+
+console.log(testSet5.isSubsetOf(testSet4));
