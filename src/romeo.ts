@@ -69,6 +69,13 @@ let domainTest2 = JackscriptSet.domain(water)
 // console.log(setValuesEqual(domainTest2, domainTest.internalset()))
 
 let testSetSubset = new JackscriptSet<number>([1,2]);
-console.log(testSetSubset.isSubsetOf(testSet));
+// console.log(testSetSubset.isSubsetOf(testSet));
 
-console.log(testSet5.isSubsetOf(testSet4));
+// console.log(testSet5.isSubsetOf(testSet4));
+
+
+// test issubset:
+let testSet3 = new JackscriptSet<number>([3,4,5,7]);
+let testSetz = new JackscriptSet<number>([1,2,3,4,5,6]);
+
+console.log(testSet3.isSubsetOf(testSetz));

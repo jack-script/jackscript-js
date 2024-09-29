@@ -117,7 +117,7 @@ describe('Jackscript class, Subset and Superset tests.', () => {
 		testSet5 = new JackscriptSet<string>("sam");
 	});
 
-	// numbers:
+	// isSubset method tests:
 	it('Does the function detect is isSubsetOf returns the correct boolean value.', ()=>{
 		expect(testSetDuplicate.isSubsetOf(testSet)).toBe(true);
 	})
@@ -127,17 +127,28 @@ describe('Jackscript class, Subset and Superset tests.', () => {
 	it('Does the function detect is isSubsetOf returns the correct boolean value.', ()=>{
 		expect(testSet3.isSubsetOf(testSet)).toBe(false);
 	})
-
-	// strings:
 	it('Does the function detect is isSubsetOf returns the correct boolean value.', ()=>{
 		expect(testSet5.isSubsetOf(testSet4)).toBe(true);
 	})
-	
+
+	// isSuperset() method tests:
+	it('Does the function detect is isSubsetOf returns the correct boolean value.', ()=>{
+		expect(testSetDuplicate.isSupersetOf(testSet)).toBe(true);
+	})
+	it('Does the function detect is isSubsetOf returns the correct boolean value.', ()=>{
+		expect(testSet3.isSupersetOf(testSet)).toBe(false);
+	})
+	it('Does the function detect is isSubsetOf returns the correct boolean value.', ()=>{
+		expect(testSet.isSupersetOf(testSet3)).toBe(false);
+	})
+	it('Does the function detect is isSubsetOf returns the correct boolean value.', ()=>{
+		expect(testSet5.isSupersetOf(testSet4)).toBe(false);
+	})
 });
 
 
 
-describe('Jackscript class, Relation methods', () => {
+// describe('Jackscript class, Relation methods', () => {
 
 	// let setA : JackscriptSet<number>;
 	// let setB : JackscriptSet<number>;
@@ -155,4 +166,4 @@ describe('Jackscript class, Relation methods', () => {
 	// 	expect(setA.createCartesian(setB)).toBe(result);
 	// })
 	
-});
+// });
