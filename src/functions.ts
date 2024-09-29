@@ -7,7 +7,6 @@ import {Coordinate, Relation} from './coordinate.js';
 // refactoring: I dont think i need to check if there is a valid set or not if i force user to 
 // have a Set as a param
 
-
 const isValidSet = <T>(theset:Set<T>): boolean =>{
 	if(theset instanceof Set === false){
 		throw "Parementers must both be of instance: Set";
@@ -172,7 +171,6 @@ class JackscriptSet<T> implements Set<T> {
 				return false;
 			}
 		}
-		
 		return true;
 	}
 
@@ -201,9 +199,5 @@ class JackscriptSet<T> implements Set<T> {
 		return true;
 	}
 }
-
-
-
-
 
 export { isValidSet, JackscriptSet}

@@ -36,9 +36,6 @@ describe('Jackscript class, Implements methods', () => {
 	it('Get the size of the set.', ()=>{
 		expect(testSet.size).toBe(6);
 	})
-
-	
-	
 });
 
 // Static methods testing:
@@ -145,25 +142,3 @@ describe('Jackscript class, Subset and Superset tests.', () => {
 		expect(testSet5.isSupersetOf(testSet4)).toBe(false);
 	})
 });
-
-
-
-// describe('Jackscript class, Relation methods', () => {
-
-	// let setA : JackscriptSet<number>;
-	// let setB : JackscriptSet<number>;
-
-	// beforeEach(() => {
-	// 	let setA = new JackscriptSet<number>();
-	// 	let setB = new JackscriptSet<number>();
-	// 	setA.add(1,2);
-	// 	setB.add(6,7);
-	// });
-
-	// it('Create cartesian product', ()=>{
-	// 	let myarray : Coordinate<number, number> [] = [[1,6], [1,7], [2,6], [2,7]];
-	// 	let result : Relation<number, number> = new JackscriptSet<Coordinate<number, number>>(myarray)
-	// 	expect(setA.createCartesian(setB)).toBe(result);
-	// })
-	
-// });

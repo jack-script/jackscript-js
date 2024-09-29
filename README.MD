@@ -1,7 +1,7 @@
 ### About jackscriptjs
 Jackscript-js is a javascript math library of sets. It covers a few useful functions involving sets that are otherwise not available in the standard Javascript library.
 
-**Version 1.0.0-Apha**  - [Change log](CHANGELOG.md)
+**Version 0.2.0**  - [Change log](CHANGELOG.md)
 
 ##### Installation
 install jackscript-js
@@ -106,87 +106,14 @@ console.log(rangeVariable); // returns 6,7
 #### IsSubsetOf() and IsSupersetOf()
 IsSubsetOf() and IsSuperSetOf() are used exactly how you would if your were to use Javascript Sets.
 
+```javascript
+let mySet = new JackscriptSet<number>([3,4,5,7]);
+let mySetSubset = new JackscriptSet<number>([3,4]);
 
-
+console.log(mySetSubset.isSubsetOf(mySet)); // prints true
+console.log(mySet.isSupersetOf(mySetSubset)); // prints true
+```
 
 `-----------------------------------`
 
-
-
-#### All functions:
-This library consists of 2 sets of functions
-1. The Functions that can be called normally
-2. The properties of relations that are callable from a class
-```typescript
-import {Coordinate} from 'jackscriptjs'
-import {Methods} from 'jackscriptjs.js';
-import { isAntiSymmetric, 
-isIrreflexive, 
-isReflexive, 
-isSymmetric, 
-isTransitive } from 'jackscriptjs'; // properties of relations
-```
-
-The `Methods` object includes these functions:
-```typescript
-Methods.createCartesianProduct()
-Methods.domain()
-Methods.range()
-Methods.isSubset()
-Methods.isSuperset()
-Methods.getRelations()
-Methods.isRelation()
-```
-
-### Basics
-```javascript
-// Add a coordinate to a set, using the coordinate created above:
-mySet.add(myCoord);
-
-// As expected, the standard library methods will work as usual
-myset.clear()
-console.log(myset)  // returns set(0)
-```
-
-#### Checking whether a set is a subset of another...
-```javascript
-let set1 = {2, 5, 6}
-let set2 = {2, 5, 6, 9}
-```
-Looking at the above code; its clear that set1 should be the subset of set2, we get our answer by calling the function `isSubset()`
-```javascript
-answer = Methods.isSubset(set1, set2) // returns true 
-console.log(answer) // prints true
-```
-
-<h5>Simmilarly we can test if a set is a superset of another</h5>
-
-```javascript
-set1 = {2, 5, 6}
-set2 = {2, 5, 6, 9}
-
-answer = Methods.isSuperset(set2, set1) // returns true 
-console.log(answer) // prints true
-```
-
-### Advanced
-Domain makes use of coordinates(set of coordinates) ,takes a set of coordinates, and returns a set of all the x values
-
-```typescript
-let testSet = new Set();
-let a :Coordinate ={
-	x: 100,
-	y: 200
-}
-let b :Coordinate ={
-	x: 400,
-	y: 600
-}
-
-testSet.add(a);
-testSet.add(b);
-
-console.log(domain); // returns set([100, 400])
-console.log(range); // returns set([200, 600])
-```
 

@@ -35,12 +35,7 @@ for(let item of myarray){
 
 // console.log(nsetA.isReflexive(test));
 let cod : Coordinate<number, number> = [1,1];
-// console.log(myarray[0])
-// console.log(cod);
 
-// console.log(coordinatesEqual());
-// console.log(myarray[0] == cod);
-// console.log(coordinatesEqual(myarray[0], cod));
 
 // testing the intersect method:
 let intersectArray = JackscriptSet.intersect(setA, setB);
@@ -51,12 +46,6 @@ let intersectArray = JackscriptSet.intersect(setA, setB);
 let testSet4 = new JackscriptSet<string>("samuel")
 let testSet5 = new JackscriptSet<string>("sam");
 let result = new JackscriptSet<string>;
-// result.add("sam");
-// console.log(JackscriptSet.union(testSet4, testSet5));
-
-// test the domain and range:
-// console.log(JackscriptSet.domain(setR));
-// console.log(JackscriptSet.range(setR));
 
 
 // Testing of the domain::: not done:
@@ -65,17 +54,11 @@ let testSet2 = new JackscriptSet<number>([3,4,5]);
 let water : Relation<number, number> = testSet.createCartesian(testSet2);
 let domainTest = new JackscriptSet<number>([1,2,3,4,5,6])
 let domainTest2 = JackscriptSet.domain(water)
-// console.log(typeof domainTest.internalset());
-// console.log(setValuesEqual(domainTest2, domainTest.internalset()))
 
 let testSetSubset = new JackscriptSet<number>([1,2]);
-// console.log(testSetSubset.isSubsetOf(testSet));
-
-// console.log(testSet5.isSubsetOf(testSet4));
-
 
 // test issubset:
 let testSet3 = new JackscriptSet<number>([3,4,5,7]);
 let testSetz = new JackscriptSet<number>([1,2,3,4,5,6]);
 
-console.log(testSet3.isSubsetOf(testSetz));
+// console.log(testSet3.isSubsetOf(testSetz));
