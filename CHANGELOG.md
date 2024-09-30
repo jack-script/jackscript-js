@@ -11,3 +11,8 @@
 
 **Added:**
 - Refactored the codebase
+
+## v2.1.1 - Sept 30, 2024
+
+**Bug fixes:**
+- Removed console log statements from methods

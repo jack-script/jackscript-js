@@ -1,7 +1,7 @@
 ### About jackscriptjs
 Jackscript-js is a javascript math library of sets. It covers a few useful functions involving sets that are otherwise not available in the standard Javascript library.
 
-**Version 0.2.0**  - [Change log](CHANGELOG.md)
+**Version 2.1.0**  - [Change log](CHANGELOG.md)
 
 ##### Installation
 install jackscript-js

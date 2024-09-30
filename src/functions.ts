@@ -164,9 +164,9 @@ class JackscriptSet<T> implements Set<T> {
 			testCoordinate = [elem, elem];
 			
 			if(!theSet.has(testCoordinate)){
-				console.log("i have found a mismatch");
+				//console.log("i have found a mismatch");
 				// console.log("elem: ", testCoordinate, " and theSet.Internalset is : ", theSet.internalSet);
-				console.log(testCoordinate === theSet.internalSet[0])
+				//console.log(testCoordinate === theSet.internalSet[0])
 				
 				return false;
 			}
