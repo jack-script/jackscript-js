@@ -62,3 +62,11 @@ let testSet3 = new JackscriptSet<number>([3,4,5,7]);
 let testSetz = new JackscriptSet<number>([1,2,3,4,5,6]);
 
 // console.log(testSet3.isSubsetOf(testSetz));
+
+// Testing reflexivity:
+let reflexive = new JackscriptSet<number>([1,2,3]);
+let reflexiveTest = new JackscriptSet<Coordinate<number, number>>([[1,1],[2,2],[3,3]]);
+// console.log(reflexive.isReflexive(reflexiveTest));
+// reflexive.isReflexive(reflexiveTest);
+
+console.log(reflexive.hasNew(reflexiveTest))

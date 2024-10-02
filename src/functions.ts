@@ -1,4 +1,5 @@
 import {Coordinate, Relation} from './coordinate.js';
+import { isCoordinateSet, checkRelationType } from './coordinate';
 
 // interface JackscriptSet<T extends Set<T>>{};
 
@@ -52,6 +53,19 @@ class JackscriptSet<T> implements Set<T> {
     has(value: T ): boolean {
         return this.internalSet.has(value);
     }
+	
+	// hasNew
+	hasNew(set: Relation<T, any>): boolean{
+
+		// lets first convert the internal set to a Relation:
+		
+
+
+		if(isCoordinateSet(set) && isCoordinateSet(this.internalSet.values())){
+			let val = set.values();
+		}
+		
+	}
 
     get size(): number {
         return this.internalSet.size;
@@ -153,19 +167,19 @@ class JackscriptSet<T> implements Set<T> {
 		return true;
 	}
 
-	// let A<number> = {1,2,3}
-	// let B<number | string> = {1,a,c}
-	// R: Coordinate<number, string> = { (1,1) , (2,2), (3,3)}
-
 	isReflexive(theSet: JackscriptSet<Coordinate<T, any>>) : Boolean {
 		let testCoordinate: Coordinate<T,T>;
+
+		let it = theSet.internalSet.values();
+		var first = it.next();
 
 		for(let elem of this.internalSet){
 			testCoordinate = [elem, elem];
 			
 			if(!theSet.has(testCoordinate)){
-				//console.log("i have found a mismatch");
-				// console.log("elem: ", testCoordinate, " and theSet.Internalset is : ", theSet.internalSet);
+				console.log("i have found a mismatch");
+				console.log("elem: ", testCoordinate, " and theSet.Internalset is : ", theSet.internalSet);
+				console.log("The type of the testCoordinate is : "+typeof testCoordinate+ " and the type of the internals set element is : "+ typeof first);
 				//console.log(testCoordinate === theSet.internalSet[0])
 				
 				return false;
