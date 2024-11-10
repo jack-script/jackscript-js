@@ -69,4 +69,4 @@ let reflexiveTest = new JackscriptSet<Coordinate<number, number>>([[1,1],[2,2],[
 // console.log(reflexive.isReflexive(reflexiveTest));
 // reflexive.isReflexive(reflexiveTest);
 
-console.log(reflexive.hasNew(reflexiveTest))
+// console.log(reflexive.hasNew(reflexiveTest))
