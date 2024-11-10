@@ -11,7 +11,7 @@
     "dev": "tsc && yarn run test && cd ./dist && node ./romeo.js",
     "build": "tsc",
     "prepare": "npm run build",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "repository": {
