@@ -54,18 +54,18 @@ class JackscriptSet<T> implements Set<T> {
         return this.internalSet.has(value);
     }
 	
-	// hasNew
-	hasNew(set: Relation<T, any>): boolean{
+	// // hasNew
+	// hasNew(set: Relation<T, any>): boolean{
 
-		// lets first convert the internal set to a Relation:
+	// 	// lets first convert the internal set to a Relation:
 		
 
 
-		if(isCoordinateSet(set) && isCoordinateSet(this.internalSet.values())){
-			let val = set.values();
-		}
+	// 	if(isCoordinateSet(set) && isCoordinateSet(this.internalSet.values())){
+	// 		let val = set.values();
+	// 	}
 		
-	}
+	// }
 
     get size(): number {
         return this.internalSet.size;
