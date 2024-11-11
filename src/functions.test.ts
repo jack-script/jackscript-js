@@ -114,7 +114,7 @@ describe('Jackscript class, Subset and Superset tests.', () => {
 		testSet5 = new JackscriptSet<string>("sam");
 	});
 
-	// isSubset method tests:
+	// isSubset() method tests:
 	it('Does the function detect is isSubsetOf returns the correct boolean value.', ()=>{
 		expect(testSetDuplicate.isSubsetOf(testSet)).toBe(true);
 	})

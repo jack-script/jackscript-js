@@ -1,13 +1,8 @@
 import {Coordinate, Relation} from './coordinate';
 import {isValidSet, JackscriptSet} from './functions'
+import {isCoordinate, coordinatesEqual} from './typechecker'
 
-// This function is to validate equality between two elements of the same type but not neccessarily coming from the same array... etc.
-function coordinatesEqual<T>(a: Coordinate<T, T>, b: Coordinate<T, T>): boolean {
-    return a[0] === b[0] && a[1] === b[1];
-}
-function setValuesEqual<T>(a: Set<T>, b: Set<T>): boolean{
-    return a === b;
-}
+
 
 // Make a mental note that a relation is not the same thing as a Jackscript set:
 // Keep them seperate... Dont try to run jackscriptset operations/methods on a realtion type.
@@ -34,7 +29,6 @@ for(let item of myarray){
 }
 
 // console.log(nsetA.isReflexive(test));
-let cod : Coordinate<number, number> = [1,1];
 
 
 // testing the intersect method:
@@ -70,3 +64,23 @@ let reflexiveTest = new JackscriptSet<Coordinate<number, number>>([[1,1],[2,2],[
 // reflexive.isReflexive(reflexiveTest);
 
 // console.log(reflexive.hasNew(reflexiveTest))
+
+let cod : Coordinate<number, number> = [1,1];
+let cod3 : Coordinate<number, number> = [1, 1];
+let cod4 : Coordinate<number, number> = [3, 4];
+let codfalse = [1,1];
+// console.log(isCoordinate<number, number>(cod)); // returns true
+// console.log(isCoordinate<string, number>(cod3)) // returns
+//console.log(isCoordinate(codfalse)) // returns false
+
+
+// console.log(coordinatesEqual(cod, reflexiveTest[0]));
+// console.log(reflexiveTest.entries().next());
+
+// const func = () => {
+//     reflexiveTest.forEach(element => {
+//         // console.log(coordinatesEqual(cod, element))
+//     });
+// }
+
+// func();
