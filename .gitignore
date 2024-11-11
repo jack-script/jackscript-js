@@ -1,2 +1,13 @@
 \dist
 \node_modules
+
+
+coverage/
+.coverage
+coverage.xml
+htmlcov/
+
+# Jest coverage
+jest-coverage/
+.jest-coverage/
+coverage-final.json
