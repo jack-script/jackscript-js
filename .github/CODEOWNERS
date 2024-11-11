@@ -1,0 +1,7 @@
+# .github/CODEOWNERS
+
+# These owners will be the default owners for everything in the repo
+*       @danielromeo
+
+# Only allow specific team to approve PRs to main
+main    @danielromeo
