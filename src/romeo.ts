@@ -80,7 +80,7 @@ let codfalse = [1,1];
 
 const func = () => {
     reflexiveTest.forEach(element => {
-        console.log(coordinatesEqual(cod, element))
+        // console.log(coordinatesEqual(cod, element))
     });
 }
 
