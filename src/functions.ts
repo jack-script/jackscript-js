@@ -170,20 +170,29 @@ class JackscriptSet<T> implements Set<T> {
 	isReflexive(theSet: JackscriptSet<Coordinate<T, any>>) : Boolean {
 		let testCoordinate: Coordinate<T,T>;
 
+		// test variable:
+		let reflexiveTest = new JackscriptSet<Coordinate<number, number>>([[1,1],[2,2],[3,3]]);
+
+
 		let it = theSet.internalSet.values();
 		var first = it.next();
 
 		for(let elem of this.internalSet){
+			// console.log(elem);
 			testCoordinate = [elem, elem];
+
+			console.log(typeof testCoordinate);
+			console.log(typeof reflexiveTest[0]);
+
+
+			// console.log(testCoordinate)
 			
-			if(!theSet.has(testCoordinate)){
-				console.log("i have found a mismatch");
-				console.log("elem: ", testCoordinate, " and theSet.Internalset is : ", theSet.internalSet);
-				console.log("The type of the testCoordinate is : "+typeof testCoordinate+ " and the type of the internals set element is : "+ typeof first);
-				//console.log(testCoordinate === theSet.internalSet[0])
-				
-				return false;
-			}
+			// if(!theSet.has(testCoordinate)){
+			// 	console.log("i have found a mismatch");
+			// 	console.log("elem: ", testCoordinate, " and theSet.Internalset is : ", theSet.internalSet);
+			// 	console.log("The type of the testCoordinate is : "+typeof testCoordinate+ " and the type of the internals set element is : "+ typeof first);
+			// 	return false;
+			// }
 		}
 		return true;
 	}
