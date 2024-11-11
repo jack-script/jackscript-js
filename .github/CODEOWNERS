@@ -5,3 +5,5 @@
 
 # Only allow specific team to approve PRs to main
 main    @danielromeo
+
+.github/workflows/* @danielromeo
