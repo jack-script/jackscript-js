@@ -16,3 +16,14 @@
 
 **Bug fixes:**
 - Removed console log statements from methods
+
+## v2.1.2 - Nov 11, 2024
+
+**Added:**
+- Added skeleton of the has function
+
+## v2.1.3 - Nov 11, 2024
+
+**Removed:**
+- Removed unused files
+
