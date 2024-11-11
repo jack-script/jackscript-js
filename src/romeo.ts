@@ -66,14 +66,25 @@ let reflexiveTest = new JackscriptSet<Coordinate<number, number>>([[1,1],[2,2],[
 // console.log(reflexive.hasNew(reflexiveTest))
 
 let cod : Coordinate<number, number> = [1,1];
-let cod3 : Coordinate<string, number> = ["s", 4];
+let cod3 : Coordinate<number, number> = [1, 1];
 let cod4 : Coordinate<number, number> = [3, 4];
 let codfalse = [1,1];
-console.log("really ")
-console.log(isCoordinate<number, number>(cod)); // returns true
-console.log(isCoordinate<string, number>(cod3)) // returns
-console.log(isCoordinate(codfalse)) // returns false
+// console.log(isCoordinate<number, number>(cod)); // returns true
+// console.log(isCoordinate<string, number>(cod3)) // returns
+//console.log(isCoordinate(codfalse)) // returns false
 
+// testing corrdinates equal:
+
+// console.log(coordinatesEqual(cod, reflexiveTest[0]));
+// console.log(reflexiveTest.entries().next());
+
+const func = ()=>{
+    reflexiveTest.forEach(element => {
+        console.log(isCoordinate(element))
+    });
+}
+
+func();
 
 
 
