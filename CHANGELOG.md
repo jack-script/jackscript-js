@@ -27,3 +27,8 @@
 **Removed:**
 - Removed unused files
 
+## v2.1.4 - Nov 17, 2024
+
+**Removed:**
+- Minor bug fixes
+
