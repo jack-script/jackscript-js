@@ -1,6 +1,6 @@
 {
   "name": "jackscript-js",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Discrete mathematics library",
   "main": "dist/index.js",
   "private": false,
