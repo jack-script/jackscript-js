@@ -8,13 +8,19 @@ describe('Coordinates typechecker methods.', () => {
     let coordinate2 : Coordinate<number, number>;
     let coordinate3 : Coordinate<string, number>;
     let coordinate4 : Coordinate<string, string>;
+
+    let coordinate5 : Coordinate<number, number>;
     let coordinate5fake = [1,1,2];
+    let cod : Coordinate<number, number>;
+    let testJackscriptSet = new JackscriptSet<Coordinate<number, number>>([[1,1],[2,2],[3,3]]);
 
 	beforeEach(() => {
 		coordinate1 = [1,1];
         coordinate2 = [2,2];
         coordinate3 = ["a",1];
         coordinate4 = ["a", "b"];
+        cod = [1,1];
+        coordinate5 = [3,3];
 	});
 	
     // test if variables are valide coordinates or not: 
@@ -33,8 +39,25 @@ describe('Coordinates typechecker methods.', () => {
     it('Value is NOT a coordinate.', () => {
         expect(isCoordinate(coordinate5fake)).toBe(false);
     })
-   
+
+    // test the coordinatesEqual() function:
+    it('Two coordinates are equal.', () => {
+        expect(coordinatesEqual(coordinate1, [1,1])).toBe(true);
+    })
+    it('Two coordinates are equal.', () => {
+        expect(coordinatesEqual(coordinate1, testJackscriptSet.values().next().value)).toBe(true);
+    })
+    // loop through identical arrays that are created differently and compare elems in each array
+    it('Two coordinates are equal.', () => { 
+        let JacksriptElement =  testJackscriptSet.values();
+        [coordinate1,coordinate2, coordinate5].forEach(element => {      
+            expect(coordinatesEqual(element, JacksriptElement.next().value)).toBe(true);    
+        });
+        
+    })
 });
+
+
 
 
 
