@@ -1,16 +1,16 @@
-# name: Restrict PRs to Main
+name: Restrict PRs to Main
 
-# on:
-#   pull_request:
-#     branches:
-#       - main
+on:
+  pull_request:
+    branches:
+      - main
 
-# jobs:
-#   restrict-pr:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Check if PR is from development branch
-#         if: github.event.pull_request.head.ref != 'development'
-#         run: |
-#           echo "Only pull requests from the 'development' branch are allowed."
-#           exit 1
+jobs:
+  restrict-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if PR is from development branch
+        if: github.event.pull_request.head.ref != 'development'
+        run: |
+          echo "Only pull requests from the 'development' branch are allowed."
+          exit 1
