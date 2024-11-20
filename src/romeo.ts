@@ -73,8 +73,6 @@ let codfalse = [1,1];
 // console.log(isCoordinate<string, number>(cod3)) // returns
 //console.log(isCoordinate(codfalse)) // returns false
 
-
-console.log(coordinatesEqual(cod, reflexiveTest.values().next()));
 // console.log(reflexiveTest.values().next());
 
 // const func = () => {
